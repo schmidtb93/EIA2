@@ -39,4 +39,4 @@ var Boxes;
         s.top = _y + "px";
     }
 })(Boxes || (Boxes = {}));
-//# sourceMappingURL=Aufgabe1.js.map
+//# sourceMappingURL=Aufgabe1.2.js.map

@@ -143,7 +143,7 @@ namespace uno { //Interface für Karten
     }
 function main(): void {
 let z: number;
-let i: string = prompt("Bitte die Anzahl der Karten eigeben"); //Eingabefenster öffnet sich
+let i: string = prompt("Bitte die Anzahl der Karten eingeben:"); //Eingabefenster öffnet sich
 z = Number(i); //eingegebner string wird zu einer number gewechselt
 
     for (let k: number = 0; k < z; k++) { 

@@ -128,7 +128,7 @@ var uno;
     }
     function main() {
         let z;
-        let i = prompt("Bitte die Anzahl der Karten eigeben"); //Eingabefenster �ffnet sich
+        let i = prompt("Bitte die Anzahl der Karten eingeben:"); //Eingabefenster �ffnet sich
         z = Number(i); //eingegebner string wird zu einer number gewechselt
         for (let k = 0; k < z; k++) {
             let l = random(15);

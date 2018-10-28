@@ -441,9 +441,8 @@ var unoneu;
     };
     //Alle 108 Karten im Array
     let allCards = [karte0, karte1, karte2, karte3, karte4, karte5, karte6, karte7, karte8, karte9, karte10, karte11, karte12, karte13, karte14, karte15, karte16, karte17, karte18, karte19, karte20, karte21, karte22, karte23, karte24, karte25, karte26, karte27, karte28, karte29, karte30, karte31, karte32, karte33, karte34, karte35, karte36, karte37, karte38, karte39, karte40, karte41, karte42, karte43, karte44, karte45, karte46, karte47, karte48, karte49, karte50, karte51, karte52, karte53, karte54, karte55, karte56, karte57, karte58, karte59, karte60, karte61, karte62, karte63, karte64, karte65, karte66, karte67, karte68, karte69, karte70, karte71, karte72, karte73, karte74, karte75, karte76, karte77, karte78, karte79, karte80, karte81, karte82, karte83, karte84, karte85, karte86, karte87, karte88, karte89, karte90, karte91, karte92, karte93, karte94, karte95, karte96, karte97, karte98, karte99, karte100, karte101, karte102, karte103, karte104, karte105, karte106, karte107];
-    //PlaceDiv von der Urspr�nglichen Aufgabe uebernommen
     function main() {
-        //Prompt von der urspr�nglichen Aufgabe �bernommen. ParseInt waere besser.
+        //Prompt von der urspr�nglichen Aufgabe uebernommen. ParseInt waere besser.
         let anzahlKarten;
         let eingabe = prompt("Bitte die Anzahl der Karten eingeben:");
         anzahlKarten = Number(eingabe);
@@ -453,7 +452,7 @@ var unoneu;
         for (let i = 0; i < anzahlKarten; i++) {
             let randomCardnum = random(allCards.length);
             placeDiv(allCards[randomCardnum].color, allCards[randomCardnum].value, i); //Karte wird erzeugt mit den im Interface definierten Werten
-            allCards.splice(randomCardnum, 1); //Zuf�llig gewaehltes Array wird aus dem allCards Array entfernt
+            allCards.splice(randomCardnum, 1); //Zufaellig gewaehltes Array wird aus dem allCards Array entfernt
             continue;
         }
     }

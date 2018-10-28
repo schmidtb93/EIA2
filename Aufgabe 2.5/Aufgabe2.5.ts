@@ -457,16 +457,16 @@ namespace unoneu {
         if (anzahlKarten > 7) { anzahlKarten = 7; } //Anzahl der augegebenen Karten auf 0-7 beschraenkt (Der Spieler bekommt am Anfang 7 Spielkarten laut UNO Regelwerk)
 
         for (let i: number = 0; i < anzahlKarten; i++) {
-
-            let randomCardnum: number = random(allCards.length);
-            placeDiv(allCards[randomCardnum].color, allCards[randomCardnum].value, i); //Karte wird erzeugt mit den im Interface definierten Werten
-            allCards.splice(randomCardnum, 1); //Zufaellig gewaehltes Array wird aus dem allCards Array entfernt
+            function random(_math: number): number {
+                return Math.floor(Math.random() * Math.floor(_math));
+            }
+            let randomCardnumber: number = random(allCards.length);
+            placeDiv(allCards[randomCardnumber].color, allCards[randomCardnumber].value, i); //Karte wird erzeugt mit den im Interface definierten Werten
+            allCards.splice(randomCardnumber, 1); //Zufaellig gewaehltes Array wird aus dem allCards Array entfernt
             continue;
         }
     }
-    function random(_math: number): number {
-        return Math.floor(Math.random() * Math.floor(_math));
-    }
+
     function placeDiv(_color: string, _x: string, _n: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);

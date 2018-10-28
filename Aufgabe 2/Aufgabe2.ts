@@ -125,7 +125,7 @@ namespace uno { //Interface für Karten
     function placeDiv(_color: string, _x: string, _n: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
-        div.setAttribute("id", "a" + _n) //div bekommt eine ID
+        div.setAttribute("id", "a" + _n); //div bekommt eine ID
         document.getElementById("a" + _n).innerHTML += _x; //Funktion placeDiv wird ein div im HTMl erstellen
         //console.log(_color, _n, _x);
         let s: CSSStyleDeclaration = div.style; //CSS Werte werden definiert, somit wird ein externes Stylesheet obsolete
@@ -223,7 +223,7 @@ z = Number(i); //eingegebner string wird zu einer number gewechselt
         function Nachziehstapel(): void {
             let div: HTMLDivElement = document.createElement("div");
             document.body.appendChild(div);
-            div.setAttribute("id", "Nachziehstapel")
+            div.setAttribute("id", "Nachziehstapel");
             document.getElementById("Nachziehstapel").innerHTML += "Nachziehstapel";
             let s: CSSStyleDeclaration = div.style;
             s.border = "thin dotted white";

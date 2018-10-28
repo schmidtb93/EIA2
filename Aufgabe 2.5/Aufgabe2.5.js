@@ -465,6 +465,9 @@ var unoneu;
         let anzahlKarten;
         let i = prompt("Bitte die Anzahl der Karten eingeben:");
         anzahlKarten = Number(i);
+        if (anzahlKarten > 7) {
+            anzahlKarten = 7;
+        } //Anzahl der augegebenen Karten auf 0-7 beschr�nkt (Der Spieler bekommt am Anfang 7 Spielkarten laut UNO Regelwerk)
         for (let i = 0; i < anzahlKarten; i++) {
             let randomCardnum = random(allCards.length);
             placeDiv(allCards[randomCardnum].color, allCards[randomCardnum].value, i);

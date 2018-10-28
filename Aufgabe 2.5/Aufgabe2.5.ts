@@ -474,9 +474,10 @@ namespace unoneu {
         let anzahlKarten: number;
         let i: string = prompt("Bitte die Anzahl der Karten eingeben:");
         anzahlKarten = Number(i);
-        
+        if (anzahlKarten > 7) { anzahlKarten = 7; } //Anzahl der augegebenen Karten auf 0-7 beschränkt (Der Spieler bekommt am Anfang 7 Spielkarten laut UNO Regelwerk)
+
         for (let i: number = 0; i < anzahlKarten; i++) {
-            
+
             let randomCardnum: number = random(allCards.length);
             placeDiv(allCards[randomCardnum].color, allCards[randomCardnum].value, i);
             allCards.splice(randomCardnum, 1); //Zufällig gewähltes Array wird aus dem allCards Array entfernt

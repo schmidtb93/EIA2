@@ -460,20 +460,20 @@ namespace unoneu {
         s.textAlign = "center";
         s.position = "absolute";
         s.backgroundColor = _color;
-        s.width = 100 + "px";
-        s.height = 170 + "px";
+        s.width = 150 + "px";
+        s.height = 200 + "px";
         s.left = (_n + 1) * 100 + "px";
         s.right = (_n + 1) * 100 + "px";
         s.bottom = 40 + "px";
         s.borderRadius = 5 + "px";
-        s.color = "white";
+        s.color = "#ffffff";
     }
 
     function main(): void {
         //Prompt von der ursprünglichen Aufgabe übernommen. ParseInt waere besser.
         let anzahlKarten: number;
-        let i: string = prompt("Bitte die Anzahl der Karten eingeben:");
-        anzahlKarten = Number(i);
+        let eingabe: string = prompt("Bitte die Anzahl der Karten eingeben:");
+        anzahlKarten = Number(eingabe);
         if (anzahlKarten > 7) { anzahlKarten = 7; } //Anzahl der augegebenen Karten auf 0-7 beschraenkt (Der Spieler bekommt am Anfang 7 Spielkarten laut UNO Regelwerk)
 
         for (let i: number = 0; i < anzahlKarten; i++) {

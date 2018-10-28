@@ -452,7 +452,7 @@ namespace unoneu {
     function main(): void {
         //Prompt von der ursprünglichen Aufgabe uebernommen. ParseInt waere besser.
         let anzahlKarten: number;
-        let eingabe: string = prompt("Bitte die Anzahl der Karten eingeben:");
+        let eingabe: string = prompt("Bitte die Anzahl der Karten eingeben (max. 7):");
         anzahlKarten = Number(eingabe);
         if (anzahlKarten > 7) { anzahlKarten = 7; } //Anzahl der augegebenen Karten auf 0-7 beschraenkt (Der Spieler bekommt am Anfang 7 Spielkarten laut UNO Regelwerk)
 

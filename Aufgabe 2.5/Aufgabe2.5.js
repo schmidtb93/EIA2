@@ -444,7 +444,7 @@ var unoneu;
     function main() {
         //Prompt von der urspr�nglichen Aufgabe uebernommen. ParseInt waere besser.
         let anzahlKarten;
-        let eingabe = prompt("Bitte die Anzahl der Karten eingeben:");
+        let eingabe = prompt("Bitte die Anzahl der Karten eingeben (max. 7):");
         anzahlKarten = Number(eingabe);
         if (anzahlKarten > 7) {
             anzahlKarten = 7;

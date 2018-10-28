@@ -470,7 +470,7 @@ var unoneu;
         } //Anzahl der augegebenen Karten auf 0-7 beschraenkt (Der Spieler bekommt am Anfang 7 Spielkarten laut UNO Regelwerk)
         for (let i = 0; i < anzahlKarten; i++) {
             let randomCardnum = random(allCards.length);
-            placeDiv(allCards[randomCardnum].color, allCards[randomCardnum].value, i);
+            placeDiv(allCards[randomCardnum].color, allCards[randomCardnum].value, i); //Karte wird erzeugt mit den im Interface definierten Werten
             allCards.splice(randomCardnum, 1); //Zuf�llig gewaehltes Array wird aus dem allCards Array entfernt
             continue;
         }

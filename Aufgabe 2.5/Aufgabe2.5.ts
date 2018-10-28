@@ -479,7 +479,7 @@ namespace unoneu {
         for (let i: number = 0; i < anzahlKarten; i++) {
 
             let randomCardnum: number = random(allCards.length);
-            placeDiv(allCards[randomCardnum].color, allCards[randomCardnum].value, i);
+            placeDiv(allCards[randomCardnum].color, allCards[randomCardnum].value, i); //Karte wird erzeugt mit den im Interface definierten Werten
             allCards.splice(randomCardnum, 1); //Zufällig gewaehltes Array wird aus dem allCards Array entfernt
             continue;
         }

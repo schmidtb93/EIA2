@@ -16,6 +16,7 @@ namespace aufgabe4 {
         document.getElementsByTagName("fieldset")[0].addEventListener("change", handleChange);
         document.getElementById("verify").addEventListener("click", verify);
     }
+
     //Funktion von Prof. Dell'Oro-Friedl und Aufgabe 13 EIA1
 
     function fillFieldset(): void {

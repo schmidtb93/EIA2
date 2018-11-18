@@ -136,7 +136,7 @@ namespace aufgabe4 {
             node.innerHTML = childHTML;
         }
         if (target.id == "shipment") {
-            let convertedString: string = target.value.substr(8);
+            let convertedString: string = target.value.substr(7);
             let index: number = Number(convertedString);
             let childHTML: string = shipment[index].name;
             holderPrice = shipment[index].price;

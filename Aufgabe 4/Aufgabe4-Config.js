@@ -131,7 +131,7 @@ var aufgabe4;
             node.innerHTML = childHTML;
         }
         if (target.id == "shipment") {
-            let convertedString = target.value.substr(8);
+            let convertedString = target.value.substr(7);
             let index = Number(convertedString);
             let childHTML = aufgabe4.shipment[index].name;
             holderPrice = aufgabe4.shipment[index].price;

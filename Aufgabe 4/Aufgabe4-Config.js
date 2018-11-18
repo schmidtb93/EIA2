@@ -62,7 +62,7 @@ var aufgabe4;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h2>halterung:</h2>";
+        childHTML += "<h2>Halterung:</h2>";
         childHTML += "<select id=holder name=holders>";
         childHTML += "<option value=clear selected></option>";
         for (let i = 0; i < aufgabe4.holder.length; i++) {
@@ -74,7 +74,7 @@ var aufgabe4;
         }
         childHTML += "</select>";
         childHTML += "<h2>Versand:</h2>";
-        childHTML += "<select id=shipment name=Shipment>";
+        childHTML += "<select id=shipment name=Shipments>";
         childHTML += "<option value=clear selected></option>";
         for (let i = 0; i < aufgabe4.shipment.length; i++) {
             childHTML += "<option value=";
@@ -134,7 +134,7 @@ var aufgabe4;
             let convertedString = target.value.substr(8);
             let index = Number(convertedString);
             let childHTML = aufgabe4.shipment[index].name;
-            shipmentPrice = aufgabe4.shipment[index].price;
+            holderPrice = aufgabe4.shipment[index].price;
             let node = document.getElementById("shipmentChoice");
             node.innerHTML = childHTML;
         }

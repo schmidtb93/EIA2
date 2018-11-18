@@ -65,7 +65,7 @@ namespace aufgabe4 {
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h2>halterung:</h2>";
+        childHTML += "<h2>Halterung:</h2>";
         childHTML += "<select id=holder name=holders>";
         childHTML += "<option value=clear selected></option>";
         for (let i: number = 0; i < holder.length; i++) {
@@ -77,7 +77,7 @@ namespace aufgabe4 {
         }
         childHTML += "</select>";
         childHTML += "<h2>Versand:</h2>";
-        childHTML += "<select id=shipment name=Shipment>";
+        childHTML += "<select id=shipment name=Shipments>";
         childHTML += "<option value=clear selected></option>";
         for (let i: number = 0; i < shipment.length; i++) {
             childHTML += "<option value=";
@@ -139,7 +139,7 @@ namespace aufgabe4 {
             let convertedString: string = target.value.substr(8);
             let index: number = Number(convertedString);
             let childHTML: string = shipment[index].name;
-            shipmentPrice = shipment[index].price;
+            holderPrice = shipment[index].price;
             let node: HTMLElement = document.getElementById("shipmentChoice");
             node.innerHTML = childHTML;
         }

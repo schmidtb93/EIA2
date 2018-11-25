@@ -1,0 +1,49 @@
+@import
+	url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas');
+
+h1 {
+	font-family: 'Mountains of Christmas', cursive;
+}
+
+fieldset {
+	font-family: 'Mountains of Christmas', cursive;
+	color: blue;
+	background-color: #ccffb3;
+	width: 50%;
+	border-radius: 5px;
+}
+
+#checkout {
+	font-family: 'Mountains of Christmas', cursive;
+	border: thin solid black;
+	width: 45%;
+	position: absolute;
+	font-size: 20px;
+	background-color: #ccffb3;
+	color: purple;
+	right: 0;
+	top: 87px;
+	padding: 0.5em;
+	border-radius: 5px;
+}
+
+#verify {
+	position: absolute;
+	border: thin solid #56daea;
+	bottom: 0px;
+	right: 200px;
+	border-radius: 5px;
+	background-color: #56daea;
+	color: #000000;
+}
+
+#incomplete {
+	border: thin dotted black;
+	position: absolute;
+	background-color:;
+	bottom: 0px;
+	right: 20px;
+	background-color: #f12727;
+	color: #ffffff;
+	border-radius: 5px;
+}

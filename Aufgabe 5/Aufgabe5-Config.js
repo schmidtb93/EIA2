@@ -525,7 +525,7 @@ var aufgabe5;
         calculatePrice();
     }
     function verify() {
-        if (christmasBulbPrice == null || christmasBulbPrice2 == null || candlePrice == null || candlePrice2 == null || lamettaPrice == null || lamettaPrice2 == null || treePrice == null || holderPrice == null || shipmentPrice == null || totalPrice == null || adress.length < 1) {
+        if (christmasBulbPrice == null || christmasBulbPrice2 == null || christmasBulbPrice3 == null || candlePrice == null || candlePrice2 == null || candlePrice3 == null || lamettaPrice == null || lamettaPrice2 == null || lamettaPrice3 == null || treePrice == null || holderPrice == null || shipmentPrice == null || totalPrice == null || adress.length < 1) {
             document.getElementById("incomplete").innerHTML = "Eingabe unvollstaendig";
         }
         else {

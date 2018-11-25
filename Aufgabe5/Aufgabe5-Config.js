@@ -26,7 +26,7 @@ var aufgabe5;
     function fillFieldset() {
         let node = document.getElementsByTagName("fieldset")[0];
         let childHTML = "";
-        childHTML += "<h3>Weihnachtskugeln:</h3>";
+        childHTML += "<h2>Weihnachtskugeln:</h2>";
         childHTML += "<select id=christmasBulb1 name=ChristmasBulbs1>";
         childHTML += "<option value=0 selected></option>";
         for (let i = 0; i < aufgabe5.christmasBulb.length; i++) {
@@ -37,7 +37,6 @@ var aufgabe5;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h4>Anzahl:</h4>";
         childHTML += "<select id=ChristmasBulbAnzahl1 name=anzahl1>";
         childHTML += "<option value=clear selected></option>";
         for (let i = 0; i < 30; i += 1) {
@@ -61,7 +60,6 @@ var aufgabe5;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h4>Anzahl:</h4>";
         childHTML += "<select id=ChristmasBulbAnzahl2 name=anzahl2>";
         childHTML += "<option value=clear selected></option>";
         for (let i = 0; i < 30; i += 1) {
@@ -74,7 +72,7 @@ var aufgabe5;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h3>Kerzen:</h3>";
+        childHTML += "<h2>Kerzen:</h2>";
         childHTML += "<select id=candle1 name=Candles1>";
         childHTML += "<option value=0 selected></option>";
         for (let i = 0; i < aufgabe5.candle.length; i++) {
@@ -85,7 +83,6 @@ var aufgabe5;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h4>Anzahl:</h4>";
         childHTML += "<select id=CandleAnzahl1 name=anzahl1>";
         childHTML += "<option value=clear selected></option>";
         for (let i = 0; i < 20; i += 1) {
@@ -109,7 +106,6 @@ var aufgabe5;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h4>Anzahl:</h4>";
         childHTML += "<select id=CandleAnzahl2 name=anzahl2>";
         childHTML += "<option value=clear selected></option>";
         for (let i = 0; i < 20; i += 1) {
@@ -122,7 +118,7 @@ var aufgabe5;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h3>Lametta:</h3>";
+        childHTML += "<h2>Lametta:</h2>";
         childHTML += "<select id=lametta1 name=Lamettas1>";
         childHTML += "<option value=0 selected></option>";
         for (let i = 0; i < aufgabe5.lametta.length; i++) {
@@ -133,7 +129,6 @@ var aufgabe5;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h4>Anzahl:</h4>";
         childHTML += "<select id=LamettaAnzahl1 name=anzahl1>";
         childHTML += "<option value=clear selected></option>";
         for (let i = 0; i < 20; i += 1) {
@@ -157,7 +152,6 @@ var aufgabe5;
             childHTML += "</option>";
         }
         childHTML += "</select>";
-        childHTML += "<h4>Anzahl:</h4>";
         childHTML += "<select id=LamettaAnzahl2 name=anzahl2>";
         childHTML += "<option value=clear selected></option>";
         for (let i = 0; i < 20; i += 1) {

@@ -2,7 +2,7 @@
 import * as Http from "http";
 
 namespace L06_SendData { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen definierten Variablen im Progrmmcode zu vermeiden
-//Konsole gibt "starting server" aus
+//Konsole gibt "Starting server" aus
     console.log("Starting server");
 //process bezieht sich auf NodeJS.Heroku ist die angegebene Umgebung. Wenn Port nicht angegeben ist, wird Port 8100 benutzt - dieser führt zu https://eia2-nodetest.herokuapp.com
     let port: number = process.env.PORT;
@@ -22,7 +22,7 @@ namespace L06_SendData { //Funktionen werden abgegrenzt um Konflikte mit ähnlich
         console.log("I hear voices!"); //Konsole gibt "I hear voices!" aus
  //Verändert die Werte von setHeader
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Bestimmt den Zeichencode sowie das folgendes Dokument ein Text ist 
-        _response.setHeader("Access-Control-Allow-Origin", "*"); //Schützt Skriptsprachen-zugriff von fremden Quellen und erlaubt nur die eigene Ressource zu laden (Origin wäre z.B https://eia2-nodetest.herokuapp.com mit dem Port 8100)  
+        _response.setHeader("Access-Control-Allow-Origin", "*"); //Schützt Skriptsprachen-zugriff von fremden Quellen und erlaubt nur die eigene Ressource zu laden (Origin wäre das Protokoll, sowie die Domäne und der Port z.B https://eia2-nodetest.herokuapp.com mit dem Port 8100)  
 
         _response.write(_request.url); // Sendet eine Antwort an die angefragte URL 
         

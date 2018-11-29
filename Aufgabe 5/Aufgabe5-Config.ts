@@ -1,6 +1,8 @@
 namespace aufgabe5 {
 
     window.addEventListener("load", init);
+    
+
 
     let totalPrice: number = 0;
     let christmasBulbPrice: number;

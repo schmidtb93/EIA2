@@ -4,7 +4,7 @@ import * as Http from "http";
 namespace L06_SendData { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen definierten Variablen im Progrmmcode zu vermeiden
 //Konsole gibt "Starting server" aus
     console.log("Starting server");
-//process bezieht sich auf NodeJS.Heroku ist die angegebene Umgebung. Wenn Port nicht angegeben ist, wird Port 8100 benutzt - dieser führt zu https://eia2-nodetest.herokuapp.com
+//process bezieht sich auf NodeJS.Heroku ist die angegebene Umgebung. Wenn Port nicht angegeben ist, wird Port 8100 benutzt 
     let port: number = process.env.PORT;
     if (port == undefined)
         port = 8100;
@@ -12,7 +12,7 @@ namespace L06_SendData { //Funktionen werden abgegrenzt um Konflikte mit ähnlich
     let server: Http.Server = Http.createServer(); //Der PC fungiert als Server.
     server.addListener("request", handleRequest); //Kommunikation zwischen Client und Server. Der Server sendet eine Anfrage "handleRequest".
     server.addListener("listening", handleListen); //Listener wartet auf eingehede Daten
-    server.listen(port); //Hört auf den Port 8100 - https://eia2-nodetest.herokuapp.com
+    server.listen(port); //Hört auf den Port 8100 
 
     function handleListen(): void {
         console.log("Listening"); //Konsole gibt "Listening" aus

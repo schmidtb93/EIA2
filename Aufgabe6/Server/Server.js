@@ -5,7 +5,7 @@ var L06_SendData;
 (function (L06_SendData) {
     //Konsole gibt "Starting server" aus
     console.log("Starting server");
-    //process bezieht sich auf NodeJS.Heroku ist die angegebene Umgebung. Wenn Port nicht angegeben ist, wird Port 8100 benutzt - dieser f�hrt zu https://eia2-nodetest.herokuapp.com
+    //process bezieht sich auf NodeJS.Heroku ist die angegebene Umgebung. Wenn Port nicht angegeben ist, wird Port 8100 benutzt 
     let port = process.env.PORT;
     if (port == undefined)
         port = 8100;
@@ -13,7 +13,7 @@ var L06_SendData;
     let server = Http.createServer(); //Der PC fungiert als Server.
     server.addListener("request", handleRequest); //Kommunikation zwischen Client und Server. Der Server sendet eine Anfrage "handleRequest".
     server.addListener("listening", handleListen); //Listener wartet auf eingehede Daten
-    server.listen(port); //H�rt auf den Port 8100 - https://eia2-nodetest.herokuapp.com
+    server.listen(port); //H�rt auf den Port 8100 
     function handleListen() {
         console.log("Listening"); //Konsole gibt "Listening" aus
     }

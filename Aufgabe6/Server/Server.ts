@@ -19,13 +19,15 @@ namespace L06_SendData { //Funktionen werden abgegrenzt um Konflikte mit ähnlich
     }
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { //Parameter Http.IncomingMessage bezieht sich auf Node.d.ts
-        console.log("I hear voices!"); //Konsole gibt "I hear voices!" aus
+        console.log(_request.url); //Konsole gibt "I hear voices!" aus //Gibt die Url zurück
  //Verändert die Werte von setHeader
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Bestimmt den Zeichencode sowie das folgendes Dokument ein Text ist 
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Schützt Skriptsprachen-zugriff von fremden Quellen und erlaubt nur die eigene Ressource zu laden (Origin wäre das Protokoll, sowie die Domäne und der Port z.B https://eia2-nodetest.herokuapp.com mit dem Port 8100)  
 
-        _response.write(_request.url); // Sendet eine Antwort an die angefragte URL 
-        
+        _response.write(_request.url); // Sendet eine Antwort an die angefragte URL  (
+       
         _response.end();  //Der Inhalt von Response wird vom Client gesendet und es wird signalisiert das jene Anfrage vollständig gesendet wurde
+    //Server wird mit strg+c beendet
     }
+    
 }

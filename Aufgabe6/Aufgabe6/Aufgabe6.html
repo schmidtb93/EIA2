@@ -1,0 +1,45 @@
+<!-- Aufgabe: Aufgabe 5
+//Name: Sebastian Schmidt
+//Matrikel: 259526
+//Datum:25.11.2018
+//Hiermit versichere ich, dass ich diesen
+//Code selbst geschrieben habe. Er wurde
+//nicht kopiert und auch nicht diktiert.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="Aufgabe6-Config.js"></script>
+<script src="Aufgabe6-Interface.js"></script>
+<link rel="stylesheet" type="text/css" href="Aufgabe6.css">
+<title>Weihnachtsbaum-Konfigurator</title>
+</head>
+<body>
+<form action="https://node-server-sebastian.herokuapp.com/" method="get">
+<h1>Weihnachtsbaum Konfigurator</h1>
+<fieldset>
+</fieldset>
+<div id="checkout">
+<h1>Uebersicht</h1>
+Weihnachtskugeln: <p id="christmasBulbColor"></p><p id="christmasBulbAmount"></p>
+<br>Weihnachtskugeln 2: <p id="christmasBulbColor2"></p><p id="christmasBulbAmount2"></p>
+<br>Weihnachtskugeln 3: <p id="christmasBulbColor3"></p><p id="christmasBulbAmount3"></p>
+<br>Kerzen: <p id="candleColor"></p><p id="candleAmount"></p>
+<br>Kerzen 2: <p id="candleColor2"></p><p id="candleAmount2"></p>
+<br>Kerzen 3: <p id="candleColor3"></p><p id="candleAmount3"></p>
+<br>Lametta: <p id="lamettaColor"></p><p id="lamettaAmount"></p>
+<br>Lametta 2: <p id="lamettaColor2"></p><p id="lamettaAmount2"></p>
+<br>Lametta 3: <p id="lamettaColor3"></p><p id="lamettaAmount3"></p>
+<br>Baum: <p id="treeTyp"></p>
+<br>Halterungen: <p id="holderSize"></p>
+<br>Versand: <p id="shipmentChoice"></p>
+<br>Adresse: <p id="adress"></p>
+<br>Preis: <p id="price"></p>
+<div id="verify">Eingabe ueberpruefen</div>
+<div id="incomplete"></div>
+<button id="submit" type="submit">Submit</button>
+</div>
+</form>
+</body>
+</html>

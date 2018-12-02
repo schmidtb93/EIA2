@@ -47,3 +47,12 @@ fieldset {
 	color: #ffffff;
 	border-radius: 5px;
 }
+#submit {
+	position: absolute;
+	border: thin solid #56daea;
+	bottom: 0px;
+	right: 300px;
+	border-radius: 5px;
+	background-color: #56daea;
+	color: #000000;
+}

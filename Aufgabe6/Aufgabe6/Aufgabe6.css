@@ -47,12 +47,14 @@ fieldset {
 	color: #ffffff;
 	border-radius: 5px;
 }
+
 #submit {
+	font-family: 'Mountains of Christmas', cursive;
 	position: absolute;
 	border: thin solid #56daea;
 	bottom: 0px;
 	right: 500px;
 	border-radius: 5px;
 	background-color: #56daea;
-	color: #000000;
+	color: #yellow;
 }

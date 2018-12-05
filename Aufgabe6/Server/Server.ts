@@ -42,7 +42,7 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
                 }
             }
             alleArtikel.push(HTML);
-            alleArtikel.push("<p>");
+     
             for (let i: number = 0; i < alleArtikel.length; i++) {
                 _response.write(alleArtikel[i]); // Sendet eine Antwort an die angefragte URL
             }

@@ -36,14 +36,14 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
 
                 else {
                     if (HTML == "<p>Text") {
-                        HTML = "<p>Adresse";
+                        HTML = "<p>Adresse"
                     }
 
                     HTML += url[i];
                     console.log(HTML);
                 }
             }
-           
+
             for (let i: number = 0; i < alleArtikel.length; i++) {
                 _response.write(alleArtikel[i]); // Sendet eine Antwort an die angefragte URL
             }

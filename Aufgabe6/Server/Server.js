@@ -23,14 +23,14 @@ var aufgabe6;
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Ver�ndert die Werte des Serverheaders: name="Access-Control-Allow-Origin" und value="*"
         if (_request.url != "/favicon.ico") {
             let url = Url.parse(_request.url).search.substr(1);
-            let HTML = "<br>";
+            let HTML = "<p>";
             for (let i = 0; i < url.length; i++) {
                 if (url[i] == "&") {
                     alleArtikel.push(HTML);
-                    HTML = "<br>";
+                    HTML = "<p>";
                 }
                 else {
-                    if (HTML == "<br>Text") {
+                    if (HTML == "<p>Text") {
                         HTML = "<br>Adresse";
                     }
                     HTML += url[i];

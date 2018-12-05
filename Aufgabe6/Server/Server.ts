@@ -25,15 +25,15 @@ namespace aufgabe6 {
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Verändert die Werte des Serverheaders: name="Access-Control-Allow-Origin" und value="*"
         if (_request.url != "/favicon.ico") {
             let url: string = Url.parse(_request.url).search.substr(1);
-            let HTML: string = "<br>";
+            let HTML: string = "<p>";
             for (let i: number = 0; i < url.length; i++) {
                 if (url[i] == "&") {
                     alleArtikel.push(HTML);
-                    HTML = "<br>";
+                    HTML = "<p>";
                 }
                 
                 else {
-                    if (HTML == "<br>Text") {
+                    if (HTML == "<p>Text") {
                         HTML = "<br>Adresse"
                         }
                  

@@ -33,12 +33,10 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
                     alleArtikel.push(HTML);
                     HTML = "<p>";
                 }
-
                 else {
                     if (HTML == "<p>Text") {
-                        HTML = "<p>Adresse"
+                        HTML = "<p>Adresse";
                     }
-
                     HTML += url[i];
                     console.log(HTML);
                 }

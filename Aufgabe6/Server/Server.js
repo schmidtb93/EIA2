@@ -1,26 +1,30 @@
 "use strict";
-const Http = require("http"); //importiert die node.d.ts Datei. Durch "Http" kann man nun auf das Modul "http" zugreifen (Zeile 615 in node.d.ts)
+//Import die gesamte node.d.ts Datei und greift auf "declare module "http"" zu
+const Http = require("http");
 const Url = require("url");
 var aufgabe6;
 (function (aufgabe6) {
+    //Konsole gibt "Starting server" aus
     console.log("Starting server");
-    let port = process.env.PORT; //process Bezieht sich auf NodeJS, falls nicht definiert nimmt er port = 8100. Dieser verweist auf https://eia2-nodetest.herokuapp.com
+    //process bezieht sich auf NodeJS.Heroku ist die angegebene Umgebung. Wenn Port nicht angegeben ist, wird Port 8100 benutzt 
+    let port = process.env.PORT;
     if (port == undefined)
         port = 8100;
+    //leeres Array f�r die Artikel
     let alleArtikel = [];
-    let server = Http.createServer(); //Erlaubt den http Transfer - fungiert als Server
-    server.addListener("request", handleRequest); //F�gt dem Server einen Listener zu. Wenn der Nutzer darauf zugreifen will wird handleRequest ausgef�hrt
-    server.addListener("listening", handleListen); //F�gt dem Server einen Listener zu. Solange der Nutzer auf den Server zugreif wird handleListen ausgef�hrt.
-    server.listen(port); //Spezifiziert, dass der Server auf den Port 8100 h�rt
+    //Erlaubt den Transfer Hyper Text Transfer Protocol. 
+    let server = Http.createServer(); //Der PC fungiert als Server.
+    server.addListener("request", handleRequest); //Kommunikation zwischen Client und Server. Der Server sendet eine Anfrage "handleRequest".
+    server.addListener("listening", handleListen); //Listener wartet auf eingehede Daten
+    server.listen(port); //H�rt auf den Port 8100 
     function handleListen() {
-        console.log("Listening"); //Gib "Listening" in der Console aus
+        console.log("Listening"); //Konsole gibt "Listening" aus
     }
     function handleRequest(_request, _response) {
-        console.log(_request.url); //Gib den eingegebenen Text in der Konsole aus
+        console.log(_request.url); //Konsole gibt "I hear voices!" aus //Gibt die Url zur�ck
         console.log("request");
-        //console.log("URLSearch:" + url);
-        _response.setHeader("content-type", "text/html; charset=utf-8"); //Ver�ndert die Werte des Serverheaders: name="content-type" und value="text/html; charset=utf-8"
-        _response.setHeader("Access-Control-Allow-Origin", "*"); //Ver�ndert die Werte des Serverheaders: name="Access-Control-Allow-Origin" und value="*"
+        _response.setHeader("content-type", "text/html; charset=utf-8"); //Bestimmt den Zeichencode sowie das folgendes Dokument ein Text ist 
+        _response.setHeader("Access-Control-Allow-Origin", "*"); //Sch�tzt Skriptsprachen-zugriff von fremden Quellen und erlaubt nur die eigene Ressource zu laden (Origin w�re das Protokoll, sowie die Dom�ne und der Port z.B https://eia2-nodetest.herokuapp.com mit dem Port 8100)  
         if (_request.url != "/favicon.ico") {
             let url = Url.parse(_request.url).search.substr(1);
             let HTML = "<p>";
@@ -31,21 +35,22 @@ var aufgabe6;
                 }
                 else {
                     if (HTML == "<p>Text") {
-                        HTML = "<br>Adresse";
+                        HTML = "<p>Adresse";
                     }
                     HTML += url[i];
                     console.log(HTML);
                 }
             }
             alleArtikel.push(HTML);
-            alleArtikel.push("<br>");
-            alleArtikel.push("<br>");
+            alleArtikel.push("<p>");
+            alleArtikel.push("<p>");
             for (let i = 0; i < alleArtikel.length; i++) {
-                _response.write(alleArtikel[i]);
+                _response.write(alleArtikel[i]); // Sendet eine Antwort an die angefragte URL
             }
             console.log(alleArtikel);
         }
-        _response.end(); //response wird beendet. Dieser Aufruf muss immer bei einem response get�tigt werden
-    } //Strg + C zum beenden
+        _response.end(); //Der Inhalt von Response wird vom Client gesendet und es wird signalisiert das jene Anfrage vollst�ndig gesendet wurde
+        //Server wird mit strg+c beendet
+    }
 })(aufgabe6 || (aufgabe6 = {}));
 //# sourceMappingURL=Server.js.map

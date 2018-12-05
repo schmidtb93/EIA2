@@ -1,4 +1,3 @@
-
 import * as Http from "http"; //importiert die node.d.ts Datei. Durch "Http" kann man nun auf das Modul "http" zugreifen (Zeile 615 in node.d.ts)
 import * as Url from "url";
 
@@ -7,7 +6,6 @@ namespace aufgabe6 {
     let port: number = process.env.PORT; //process Bezieht sich auf NodeJS, falls nicht definiert nimmt er port = 8100. Dieser verweist auf https://eia2-nodetest.herokuapp.com
     if (port == undefined)
         port = 8100;
-    
     
     let alleArtikel: string[] = [];
     
@@ -33,6 +31,7 @@ namespace aufgabe6 {
                     alleArtikel.push(HTML);
                     HTML = "<br>";
                 }
+                
                 else {
                     if (HTML == "<br>Text") {
                         HTML = "<br>Adresse"

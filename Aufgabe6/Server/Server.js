@@ -41,6 +41,9 @@ var aufgabe6;
                     console.log(HTML);
                 }
             }
+            alleArtikel.push(HTML);
+            alleArtikel.push("<p>");
+            alleArtikel.push("<p>");
             for (let i = 0; i < alleArtikel.length; i++) {
                 _response.write(alleArtikel[i]); // Sendet eine Antwort an die angefragte URL
             }

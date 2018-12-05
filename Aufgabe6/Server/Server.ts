@@ -2,14 +2,14 @@
 import * as Http from "http"; //importiert die node.d.ts Datei. Durch "Http" kann man nun auf das Modul "http" zugreifen (Zeile 615 in node.d.ts)
 import * as Url from "url";
 
-namespace A6 {
+namespace aufgabe6 {
     console.log("Starting server");
     let port: number = process.env.PORT; //process Bezieht sich auf NodeJS, falls nicht definiert nimmt er port = 8100. Dieser verweist auf https://eia2-nodetest.herokuapp.com
     if (port == undefined)
         port = 8100;
     
     
-    let HTMLArray: string[] = [];
+    let alleArtikel: string[] = [];
     
     let server: Http.Server = Http.createServer(); //Erlaubt den http Transfer - fungiert als Server
     server.addListener("request", handleRequest); //Fügt dem Server einen Listener zu. Wenn der Nutzer darauf zugreifen will wird handleRequest ausgeführt
@@ -30,7 +30,7 @@ namespace A6 {
             let HTML: string = "<br>";
             for (let i: number = 0; i < url.length; i++) {
                 if (url[i] == "&") {
-                    HTMLArray.push(HTML);
+                    alleArtikel.push(HTML);
                     HTML = "<br>";
                 }
                 else {
@@ -44,14 +44,13 @@ namespace A6 {
                 
                 
             }
-            HTMLArray.push(HTML);
-            HTMLArray.push("<br>");
-            HTMLArray.push("------------------");
-            HTMLArray.push("<br>");
-            for (let i: number = 0 ; i < HTMLArray.length ; i++) {
-                _response.write(HTMLArray[i]);
+            alleArtikel.push(HTML);
+            alleArtikel.push("<br>");            
+            alleArtikel.push("<br>");
+            for (let i: number = 0 ; i < alleArtikel.length ; i++) {
+                _response.write(alleArtikel[i]);
                 }
-            console.log(HTMLArray);
+            console.log(alleArtikel);
             //  _response.write(url);
         }
 

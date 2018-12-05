@@ -1,13 +1,13 @@
 "use strict";
 const Http = require("http"); //importiert die node.d.ts Datei. Durch "Http" kann man nun auf das Modul "http" zugreifen (Zeile 615 in node.d.ts)
 const Url = require("url");
-var A6;
-(function (A6) {
+var aufgabe6;
+(function (aufgabe6) {
     console.log("Starting server");
     let port = process.env.PORT; //process Bezieht sich auf NodeJS, falls nicht definiert nimmt er port = 8100. Dieser verweist auf https://eia2-nodetest.herokuapp.com
     if (port == undefined)
         port = 8100;
-    let HTMLArray = [];
+    let alleArtikel = [];
     let server = Http.createServer(); //Erlaubt den http Transfer - fungiert als Server
     server.addListener("request", handleRequest); //F�gt dem Server einen Listener zu. Wenn der Nutzer darauf zugreifen will wird handleRequest ausgef�hrt
     server.addListener("listening", handleListen); //F�gt dem Server einen Listener zu. Solange der Nutzer auf den Server zugreif wird handleListen ausgef�hrt.
@@ -26,7 +26,7 @@ var A6;
             let HTML = "<br>";
             for (let i = 0; i < url.length; i++) {
                 if (url[i] == "&") {
-                    HTMLArray.push(HTML);
+                    alleArtikel.push(HTML);
                     HTML = "<br>";
                 }
                 else {
@@ -37,16 +37,15 @@ var A6;
                     console.log(HTML);
                 }
             }
-            HTMLArray.push(HTML);
-            HTMLArray.push("<br>");
-            HTMLArray.push("------------------");
-            HTMLArray.push("<br>");
-            for (let i = 0; i < HTMLArray.length; i++) {
-                _response.write(HTMLArray[i]);
+            alleArtikel.push(HTML);
+            alleArtikel.push("<br>");
+            alleArtikel.push("<br>");
+            for (let i = 0; i < alleArtikel.length; i++) {
+                _response.write(alleArtikel[i]);
             }
-            console.log(HTMLArray);
+            console.log(alleArtikel);
         }
         _response.end(); //response wird beendet. Dieser Aufruf muss immer bei einem response get�tigt werden
     } //Strg + C zum beenden
-})(A6 || (A6 = {}));
+})(aufgabe6 || (aufgabe6 = {}));
 //# sourceMappingURL=Server.js.map

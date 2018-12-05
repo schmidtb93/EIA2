@@ -41,8 +41,8 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
                     console.log(HTML);
                 }
             }
-            alleArtikel.push(HTML);
-     
+            alleArtikel.push(HTML);  
+               
             for (let i: number = 0; i < alleArtikel.length; i++) {
                 _response.write(alleArtikel[i]); // Sendet eine Antwort an die angefragte URL
             }

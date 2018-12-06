@@ -26,16 +26,16 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Bestimmt den Zeichencode sowie das folgendes Dokument ein Text ist 
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Schützt Skriptsprachen-zugriff von fremden Quellen und erlaubt nur die eigene Ressource zu laden (Origin wäre das Protokoll, sowie die Domäne und der Port z.B https://eia2-nodetest.herokuapp.com mit dem Port 8100)  
         if (_request.url != "/favicon.ico") {
-            let urlEncoding: string = Url.parse(_request.url).search.substr(1);
+            let urlEncoding: string = Url.parse(_request.url).search.substr(1); //Die Url wird zergliedert in "Kugel1=2&Kugel2=1" usw. 
             let childHTML: string = "<p>";
             for (let i: number = 0; i < urlEncoding.length; i++) {
-                if (urlEncoding[i] == "&") { //Alle Artikel zur Auswahl werden mit einem Zeilenumbruch belegt.
+                if (urlEncoding[i] == "&") { //Alle Artikel die nacheinander mit einen "&" in der Url encodiert wurden werden mit einem Zeilenumbruch belegt.
                     alleArtikel.push(childHTML);
                     childHTML = "<p>";
                 }
                 else {
-                    if (childHTML == "<p>adresse") { //Da die Adressenauswahl kein Artikel darstellt, wird diese in der Else-If Schleife ausgeführt
-                        childHTML = "<p>Adresse";
+                    if (childHTML == "<p>adresse") { //Da die Adressenauswahl kein Artikel darstellt, wird diese in der Else-If Schleife ausgeführt (bedingt durch Zeile 29)
+                        childHTML = "<p>Adresse"; //Name vom Text adresse
                     }
                     childHTML += urlEncoding[i];
                 }

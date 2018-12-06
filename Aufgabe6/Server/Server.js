@@ -33,6 +33,7 @@ var aufgabe6;
                     alleArtikel.push(childHTML);
                     childHTML = "<p>";
                 }
+                childHTML += urlEncoding[i];
             }
             alleArtikel.push(childHTML);
             for (let i = 0; i < alleArtikel.length; i++) {

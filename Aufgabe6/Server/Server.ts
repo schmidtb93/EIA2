@@ -33,7 +33,9 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
                     alleArtikel.push(childHTML);
                     childHTML = "<p>";
                 }
-            
+             
+                    childHTML += urlEncoding[i];
+                                    
             }
             alleArtikel.push(childHTML);  
                

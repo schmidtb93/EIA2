@@ -33,7 +33,12 @@ var aufgabe6;
                     alleArtikel.push(childHTML);
                     childHTML = "<p>";
                 }
-                childHTML += urlEncoding[i];
+                else {
+                    if (childHTML == "<p>Text") {
+                        childHTML = "<p>Adresse";
+                    }
+                    childHTML += urlEncoding[i];
+                }
             }
             alleArtikel.push(childHTML);
             for (let i = 0; i < alleArtikel.length; i++) {

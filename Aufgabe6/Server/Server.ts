@@ -33,12 +33,15 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
                     alleArtikel.push(childHTML);
                     childHTML = "<p>";
                 }
-             
+                else {
+                    if (childHTML == "<p>Text") {
+                        childHTML = "<p>Adresse";
+                    }
                     childHTML += urlEncoding[i];
-                                    
+                }
             }
-            alleArtikel.push(childHTML);  
-               
+            alleArtikel.push(childHTML);
+
             for (let i: number = 0; i < alleArtikel.length; i++) {
                 _response.write(alleArtikel[i]); // Sendet eine Antwort an die angefragte URL
             }

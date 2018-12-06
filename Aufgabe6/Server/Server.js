@@ -26,22 +26,15 @@ var aufgabe6;
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Bestimmt den Zeichencode sowie das folgendes Dokument ein Text ist 
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Sch�tzt Skriptsprachen-zugriff von fremden Quellen und erlaubt nur die eigene Ressource zu laden (Origin w�re das Protokoll, sowie die Dom�ne und der Port z.B https://eia2-nodetest.herokuapp.com mit dem Port 8100)  
         if (_request.url != "/favicon.ico") {
-            let url = Url.parse(_request.url).search.substr(1);
-            let HTML = "<p>";
-            for (let i = 0; i < url.length; i++) {
-                if (url[i] == "&") {
-                    alleArtikel.push(HTML);
-                    HTML = "<p>";
-                }
-                else {
-                    if (HTML == "<p>Text") {
-                        HTML = "<p>Adresse";
-                    }
-                    HTML += url[i];
-                    console.log(HTML);
+            let urlEncoding = Url.parse(_request.url).search.substr(1);
+            let childHTML = "<p>";
+            for (let i = 0; i < urlEncoding.length; i++) {
+                if (urlEncoding[i] == "&") {
+                    alleArtikel.push(childHTML);
+                    childHTML = "<p>";
                 }
             }
-            alleArtikel.push(HTML);
+            alleArtikel.push(childHTML);
             for (let i = 0; i < alleArtikel.length; i++) {
                 _response.write(alleArtikel[i]); // Sendet eine Antwort an die angefragte URL
             }

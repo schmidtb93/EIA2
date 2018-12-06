@@ -26,22 +26,16 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Bestimmt den Zeichencode sowie das folgendes Dokument ein Text ist 
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Schützt Skriptsprachen-zugriff von fremden Quellen und erlaubt nur die eigene Ressource zu laden (Origin wäre das Protokoll, sowie die Domäne und der Port z.B https://eia2-nodetest.herokuapp.com mit dem Port 8100)  
         if (_request.url != "/favicon.ico") {
-            let url: string = Url.parse(_request.url).search.substr(1);
-            let HTML: string = "<p>";
-            for (let i: number = 0; i < url.length; i++) {
-                if (url[i] == "&") {
-                    alleArtikel.push(HTML);
-                    HTML = "<p>";
+            let urlEncoding: string = Url.parse(_request.url).search.substr(1);
+            let childHTML: string = "<p>";
+            for (let i: number = 0; i < urlEncoding.length; i++) {
+                if (urlEncoding[i] == "&") {
+                    alleArtikel.push(childHTML);
+                    childHTML = "<p>";
                 }
-                else {
-                    if (HTML == "<p>Text") {
-                        HTML = "<p>Adresse";
-                    }
-                    HTML += url[i];
-                    console.log(HTML);
-                }
+            
             }
-            alleArtikel.push(HTML);  
+            alleArtikel.push(childHTML);  
                
             for (let i: number = 0; i < alleArtikel.length; i++) {
                 _response.write(alleArtikel[i]); // Sendet eine Antwort an die angefragte URL

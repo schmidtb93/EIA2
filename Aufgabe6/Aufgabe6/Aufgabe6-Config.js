@@ -273,7 +273,7 @@ var aufgabe6;
         }
         childHTML += "</select>";
         childHTML += "<h2>Deine Adresse:</h2>";
-        childHTML += "<input id=adressID type=text name=Text placeholder=Eingabe>";
+        childHTML += "<input id=adressID type=text name=adresse placeholder=Eingabe>";
         node.innerHTML += childHTML;
     }
     function calculatePrice() {

@@ -34,7 +34,7 @@ var aufgabe6;
                     childHTML = "<p>";
                 }
                 else {
-                    if (childHTML == "<p>Text") {
+                    if (childHTML == "<p>adresse") {
                         childHTML = "<p>Adresse";
                     }
                     childHTML += urlEncoding[i];

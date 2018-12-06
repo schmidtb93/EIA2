@@ -29,12 +29,12 @@ namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen d
             let urlEncoding: string = Url.parse(_request.url).search.substr(1);
             let childHTML: string = "<p>";
             for (let i: number = 0; i < urlEncoding.length; i++) {
-                if (urlEncoding[i] == "&") {
+                if (urlEncoding[i] == "&") { //Alle Artikel zur Auswahl werden mit einem Zeilenumbruch belegt.
                     alleArtikel.push(childHTML);
                     childHTML = "<p>";
                 }
                 else {
-                    if (childHTML == "<p>Text") {
+                    if (childHTML == "<p>adresse") { //Da die Adressenauswahl kein Artikel darstellt, wird diese in der Else-If Schleife ausgeführt
                         childHTML = "<p>Adresse";
                     }
                     childHTML += urlEncoding[i];

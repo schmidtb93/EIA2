@@ -1,5 +1,5 @@
-var L06_SendData;
-(function (L06_SendData) {
+var aufgabe7;
+(function (aufgabe7) {
     window.addEventListener("load", init);
     let address = "http://localhost:8100";
     //let address: string = "https://eia2-nodetest.herokuapp.com";
@@ -32,5 +32,5 @@ var L06_SendData;
             console.log("response: " + xhr.response);
         }
     }
-})(L06_SendData || (L06_SendData = {}));
+})(aufgabe7 || (aufgabe7 = {}));
 //# sourceMappingURL=SendData.js.map

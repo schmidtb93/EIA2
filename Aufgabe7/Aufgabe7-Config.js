@@ -11,28 +11,28 @@ var Aufgabe7;
     function writeHTML() {
         let node = document.getElementById("fieldset");
         let childNodeHTML;
-        childNodeHTML = "<h3>Baum</h3>";
+        childNodeHTML = "<h3>Baum:</h3>";
         childNodeHTML += "<select name='Baum' id='tree'>";
         for (let i = 0; i < Aufgabe7.treeTyp.length; i++) {
             childNodeHTML += "<option value='" + i + Aufgabe7.treeTyp[i].name + "'>" + Aufgabe7.treeTyp[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<h3>Halterung</h3>";
+        childNodeHTML += "<h3>Halterung:</h3>";
         childNodeHTML += "<select name='Halterung' id='holder'>";
         for (let i = 0; i < Aufgabe7.holder.length; i++) {
             childNodeHTML += "<option value='" + i + Aufgabe7.holder[i].name + "'>" + Aufgabe7.holder[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<h3>Lieferant</h3>";
+        childNodeHTML += "<h3>Lieferant:</h3>";
         childNodeHTML += "<select name='Lieferant' id='shipment'>";
         for (let i = 0; i < Aufgabe7.shipment.length; i++) {
             childNodeHTML += "<option value='" + i + Aufgabe7.shipment[i].name + "'>" + Aufgabe7.shipment[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<h3>Adresse</h3>";
+        childNodeHTML += "<h3>Adresse:</h3>";
         childNodeHTML += "<input id='strasse' type='text' name='Text' placeholder='Strasse' required/>";
         childNodeHTML += "<input id='hausnummer' type='text' name='Text' placeholder='Hausnummer' required/>";
         childNodeHTML += "<br>";

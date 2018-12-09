@@ -2,63 +2,44 @@ namespace Aufgabe7 {
     document.addEventListener("DOMContentLoaded", writeHTML);
     document.addEventListener("DOMContentLoaded", init);
 
-
-
     let address: string = "localhost:8100/";
     let treePrice: number = 0;
-  
-    let holderPrice: number = 0;
+      let holderPrice: number = 0;
     let shipmentPrice: number = 0;
     let strasse1: string = "";
     let hausnummer1: string = "";
-
+    
     function writeHTML() {
 
         let node: HTMLElement = document.getElementById("fieldset");
         let childNodeHTML: string;
 
-        childNodeHTML = "<h3>Baum</h3>";
+        childNodeHTML = "<h3>Baum:</h3>";
         childNodeHTML += "<select name='Baum' id='tree'>";
         for (let i: number = 0; i < treeTyp.length; i++) {
             childNodeHTML += "<option value='" + i + treeTyp[i].name + "'>" + treeTyp[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-
-        childNodeHTML += "<h3>Halterung</h3>";
+        childNodeHTML += "<h3>Halterung:</h3>";
         childNodeHTML += "<select name='Halterung' id='holder'>";
         for (let i: number = 0; i < holder.length; i++) {
             childNodeHTML += "<option value='" + i + holder[i].name + "'>" + holder[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-
-        childNodeHTML += "<h3>Lieferant</h3>";
+        childNodeHTML += "<h3>Lieferant:</h3>";
         childNodeHTML += "<select name='Lieferant' id='shipment'>";
         for (let i: number = 0; i < shipment.length; i++) {
             childNodeHTML += "<option value='" + i + shipment[i].name + "'>" + shipment[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-
-        childNodeHTML += "<h3>Adresse</h3>";
+        childNodeHTML += "<h3>Adresse:</h3>";
         childNodeHTML += "<input id='strasse' type='text' name='Text' placeholder='Strasse' required/>";
         childNodeHTML += "<input id='hausnummer' type='text' name='Text' placeholder='Hausnummer' required/>";
         childNodeHTML += "<br>";
-
-
-
-
-
-
-
-
-
-
-
-
         childNodeHTML += "<h3>Weihnachtskugeln</h3>";
-
         childNodeHTML += "<h4>Bitte Anzahl der Artikel eingeben:</h4>";
         childNodeHTML += "<br>";
         for (let i: number = 0; i < christmasBulb.length; i++) {
@@ -85,8 +66,6 @@ namespace Aufgabe7 {
             childNodeHTML += "<br>";
             continue
         }
-
-
 
         node.innerHTML += childNodeHTML
     }
@@ -212,9 +191,9 @@ namespace Aufgabe7 {
         HTML += " Euro";
         node.innerHTML = HTML
     }
-    function verify() : void {
+    function verify(): void {
         if (treePrice == null || holderPrice == null || shipmentPrice == null || strasse1.length < 1  || hausnummer1.length < 1)
-        { document.getElementById("incomplete").innerHTML = "Fehlende Angaben!"; }
+        { document.getElementById("incomplete").innerHTML = "Fehlende Angaben!";}
         else {
             document.getElementById("incomplete").innerHTML = "";
         }

@@ -2,9 +2,7 @@ namespace Aufgabe7 {
     export interface Decoration {
         name: string;
         price: number;
-    }
- 
-   
+    }   
     export let christmasBulb: Decoration[] = [{ name: "Rot (2 Euro)", price: 2 }, { name: "Gold (3 Euro)", price: 3 }, { name: "Lila (2 Euro)", price: 2 }];
     export let candle: Decoration[] = [{ name: "Kerzen rot (1 Euro)", price: 1 }, { name: "Kerzen gold (3 Euro)", price: 3 }, { name: "Kerzen silber (2 Euro)", price: 2 }];
     export let lametta: Decoration[] = [{ name: "Gold Packung (5 Euro)", price: 5 }, { name: "Silber (3 Euro)", price: 3 }, { name: "Lila (3 Euro)", price: 3 }];

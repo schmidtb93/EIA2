@@ -1,4 +1,4 @@
-namespace Aufgabe7 {
+namespace aufgabe7 {
     export interface Decoration {
         name: string;
         price: number;

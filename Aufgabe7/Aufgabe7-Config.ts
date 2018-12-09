@@ -2,6 +2,7 @@ namespace aufgabe7 {
     document.addEventListener("DOMContentLoaded", fillFieldset);
     document.addEventListener("DOMContentLoaded", init);
 
+    
     let address: string = "https://node-server-sebastian.herokuapp.com/";
     let treePrice: number = 0;
     let holderPrice: number = 0;

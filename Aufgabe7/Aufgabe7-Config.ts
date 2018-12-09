@@ -2,7 +2,7 @@ namespace aufgabe7 {
     document.addEventListener("DOMContentLoaded", fillFieldset);
     document.addEventListener("DOMContentLoaded", init);
 
-    let address: string = "localhost:8100/";
+    let address: string = "https://node-server-sebastian.herokuapp.com/";
     let treePrice: number = 0;
     let holderPrice: number = 0;
     let shipmentPrice: number = 0;
@@ -28,8 +28,8 @@ namespace aufgabe7 {
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<h3>Lieferant:</h3>";
-        childNodeHTML += "<select name='Lieferant' id='shipment'>";
+        childNodeHTML += "<h3>Versand:</h3>";
+        childNodeHTML += "<select name='Versand' id='shipment'>";
         for (let i: number = 0; i < shipment.length; i++) {
             childNodeHTML += "<option value='" + i + shipment[i].name + "'>" + shipment[i].name + "</option>";
         }
@@ -132,7 +132,7 @@ namespace aufgabe7 {
             node.innerHTML = childNodeHTML;
         }
         if (target.id == "shipment") {
-            let node: HTMLElement = document.getElementById("lieferant");
+            let node: HTMLElement = document.getElementById("versand");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
             let childNodeHTML: string;
@@ -199,7 +199,7 @@ namespace aufgabe7 {
     }
     function sendRequestWithCustomData(): void {
         let num: number = document.getElementsByClassName("checkout").length;
-        let HTMLString: string = "";
+        let strings: string = "";
         //console.log(num);
         for (let i: number = 0; i < num; i++) {
 
@@ -207,24 +207,24 @@ namespace aufgabe7 {
             //console.log(article.childElementCount);
             if (article.childElementCount > 0) {
                 for (let i: number = 0; i < article.childElementCount; i++) {
-                    HTMLString += article.children[i].getAttribute("name") + ":";
+                    strings += article.children[i].getAttribute("name") + ":";
                     if (article.children[i].getAttribute("name") == "Weihnachtskugeln" || article.children[i].getAttribute("name") == "Kerzen" || article.children[i].getAttribute("name") == "Lametta") {
-                        HTMLString += article.children[i].getAttribute("hiddenName");
+                        strings += article.children[i].getAttribute("hiddenName");
                     }
-                    HTMLString += article.children[i].getAttribute("value");
-                    HTMLString += "&";
+                    strings += article.children[i].getAttribute("value");
+                    strings += "&";
                 }
             }
             else {
                 continue;
             }
         }
-        console.log("HTMLString:" + HTMLString);
+        console.log("HTMLString:" + strings);
 
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        alert(HTMLString);
+        alert(strings);
 
-        xhr.open("GET", address + "?" + HTMLString, true);
+        xhr.open("GET", address + "?" + strings, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }

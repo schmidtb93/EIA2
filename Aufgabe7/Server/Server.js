@@ -2,8 +2,8 @@
 //Import die gesamte node.d.ts Datei und greift auf "declare module "http"" zu
 const Http = require("http");
 const Url = require("url");
-var aufgabe6;
-(function (aufgabe6) {
+var aufgabe7;
+(function (aufgabe7) {
     //Konsole gibt "Starting server" aus
     console.log("Starting server");
     //process bezieht sich auf NodeJS.Heroku ist die angegebene Umgebung. Wenn Port nicht angegeben ist, wird Port 8100 benutzt 
@@ -49,5 +49,5 @@ var aufgabe6;
         _response.end(); //Der Inhalt von Response wird vom Client gesendet und es wird signalisiert das jene Anfrage vollst�ndig gesendet wurde
         //Server wird mit strg+c beendet
     }
-})(aufgabe6 || (aufgabe6 = {}));
+})(aufgabe7 || (aufgabe7 = {}));
 //# sourceMappingURL=Server.js.map

@@ -2,7 +2,7 @@
 import * as Http from "http";
 import * as Url from "url";
 
-namespace aufgabe6 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen definierten Variablen im Progrmmcode zu vermeiden
+namespace aufgabe7 { //Funktionen werden abgegrenzt um Konflikte mit ähnlichen definierten Variablen im Progrmmcode zu vermeiden
     //Konsole gibt "Starting server" aus
     console.log("Starting server");
     //process bezieht sich auf NodeJS.Heroku ist die angegebene Umgebung. Wenn Port nicht angegeben ist, wird Port 8100 benutzt 

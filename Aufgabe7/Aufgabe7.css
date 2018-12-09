@@ -57,20 +57,8 @@ div{
 	border-radius: 5px;
 }
 
-input:invalid {
-	background: white;
-}
-input:valid {
-	background: white;
-}
-input:required {
-	background: white;
-}
 
 #preis{
 font-size:2em;
 font-style:bold;}
 
-.text{
-font-size:1.2em;
-}

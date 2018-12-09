@@ -69,7 +69,7 @@ var aufgabe7;
         let fieldset = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
         document.getElementById("verify").addEventListener("click", verify);
-        document.getElementById("lul").addEventListener("click", sendRequestWithCustomData);
+        document.getElementById("async").addEventListener("click", sendRequestWithCustomData);
     }
     function handleChange(_event) {
         let target = _event.target;

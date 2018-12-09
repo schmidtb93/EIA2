@@ -73,9 +73,8 @@ namespace aufgabe7 {
     function init(_event: Event) {
         let fieldset: HTMLElement = document.getElementById("fieldset")
         fieldset.addEventListener("change", handleChange);
-
         document.getElementById("verify").addEventListener("click", verify);
-        document.getElementById("lul").addEventListener("click", sendRequestWithCustomData);
+        document.getElementById("async").addEventListener("click", sendRequestWithCustomData);
     }
 
     function handleChange(_event: Event) {

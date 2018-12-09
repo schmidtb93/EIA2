@@ -217,7 +217,7 @@ namespace aufgabe7 {
              }
              console.log("HTMLString:" + strings);
              let xhr: XMLHttpRequest = new XMLHttpRequest();
-             alert(strings);
+             //alert(strings);
              xhr.open("GET", address + "?" + strings, true);
              xhr.addEventListener("readystatechange", handleStateChange);
              xhr.send();
@@ -226,7 +226,7 @@ namespace aufgabe7 {
              var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
              if (xhr.readyState == XMLHttpRequest.DONE) {
                  console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
-                 console.log("response: " + xhr.response);
+                 alert("response: " + xhr.response);
              }
          }    
 }

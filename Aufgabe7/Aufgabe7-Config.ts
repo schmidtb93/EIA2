@@ -197,18 +197,15 @@ namespace aufgabe7 {
             document.getElementById("incomplete").innerHTML = "";
         }
     }
-    function sendRequestWithCustomData(): void {
-        let num: number = document.getElementsByClassName("checkout").length;
+        function sendRequestWithCustomData(): void {
+        let sendRequest: number = document.getElementsByClassName("checkout").length;
         let strings: string = "";
-        //console.log(num);
-        for (let i: number = 0; i < num; i++) {
-
+        for (let i: number = 0; i < sendRequest; i++) {
             let article: HTMLElement = <HTMLElement>document.getElementsByClassName("checkout")[i];
-            //console.log(article.childElementCount);
             if (article.childElementCount > 0) {
                 for (let i: number = 0; i < article.childElementCount; i++) {
                     strings += article.children[i].getAttribute("name") + ":";
-                    if (article.children[i].getAttribute("name") == "Weihnachtskugeln" || article.children[i].getAttribute("name") == "Kerzen" || article.children[i].getAttribute("name") == "Lametta") {
+                    if (article.children[i].getAttribute("name") == "Weihnachtskugeln" || article.children[i].getAttribute("name") == "Lametta" || article.children[i].getAttribute("name") == "Kerzen" ) {
                         strings += article.children[i].getAttribute("hiddenName");
                     }
                     strings += article.children[i].getAttribute("value");
@@ -220,15 +217,12 @@ namespace aufgabe7 {
             }
         }
         console.log("HTMLString:" + strings);
-
         let xhr: XMLHttpRequest = new XMLHttpRequest();
         alert(strings);
-
         xhr.open("GET", address + "?" + strings, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
-
     function handleStateChange(_event: ProgressEvent): void {
         var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {

@@ -181,16 +181,14 @@ var aufgabe7;
         }
     }
     function sendRequestWithCustomData() {
-        let num = document.getElementsByClassName("checkout").length;
+        let sendRequest = document.getElementsByClassName("checkout").length;
         let strings = "";
-        //console.log(num);
-        for (let i = 0; i < num; i++) {
+        for (let i = 0; i < sendRequest; i++) {
             let article = document.getElementsByClassName("checkout")[i];
-            //console.log(article.childElementCount);
             if (article.childElementCount > 0) {
                 for (let i = 0; i < article.childElementCount; i++) {
                     strings += article.children[i].getAttribute("name") + ":";
-                    if (article.children[i].getAttribute("name") == "Weihnachtskugeln" || article.children[i].getAttribute("name") == "Kerzen" || article.children[i].getAttribute("name") == "Lametta") {
+                    if (article.children[i].getAttribute("name") == "Weihnachtskugeln" || article.children[i].getAttribute("name") == "Lametta" || article.children[i].getAttribute("name") == "Kerzen") {
                         strings += article.children[i].getAttribute("hiddenName");
                     }
                     strings += article.children[i].getAttribute("value");

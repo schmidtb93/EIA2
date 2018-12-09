@@ -1,6 +1,6 @@
 var aufgabe7;
 (function (aufgabe7) {
-    document.addEventListener("DOMContentLoaded", writeHTML);
+    document.addEventListener("DOMContentLoaded", fillFieldset);
     document.addEventListener("DOMContentLoaded", init);
     let address = "localhost:8100/";
     let treePrice = 0;
@@ -8,7 +8,7 @@ var aufgabe7;
     let shipmentPrice = 0;
     let strasse1 = "";
     let hausnummer1 = "";
-    function writeHTML() {
+    function fillFieldset() {
         let node = document.getElementById("fieldset");
         let childNodeHTML;
         childNodeHTML = "<h3>Baum:</h3>";

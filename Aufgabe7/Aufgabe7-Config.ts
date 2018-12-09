@@ -1,15 +1,15 @@
 namespace aufgabe7 {
-    document.addEventListener("DOMContentLoaded", writeHTML);
+    document.addEventListener("DOMContentLoaded", fillFieldset);
     document.addEventListener("DOMContentLoaded", init);
 
     let address: string = "localhost:8100/";
     let treePrice: number = 0;
-      let holderPrice: number = 0;
+    let holderPrice: number = 0;
     let shipmentPrice: number = 0;
     let strasse1: string = "";
     let hausnummer1: string = "";
-    
-    function writeHTML() {
+
+    function fillFieldset(): void {
 
         let node: HTMLElement = document.getElementById("fieldset");
         let childNodeHTML: string;
@@ -46,7 +46,7 @@ namespace aufgabe7 {
             childNodeHTML += christmasBulb[i].name;
             childNodeHTML += " <input type='text' id='numBulbs" + i + "' name='Weihnachtskugeln' title='" + christmasBulb[i].name + "' price='" + christmasBulb[i].price + "'/>";
             childNodeHTML += "<br>";
-            continue
+            continue;
         }
         childNodeHTML += "<h3>Lametta</h3>";
         childNodeHTML += "<h4>Bitte Anzahl der Artikel eingeben:</h4>";
@@ -55,7 +55,7 @@ namespace aufgabe7 {
             childNodeHTML += lametta[i].name;
             childNodeHTML += " <input type='text' id='numLametta" + i + "' name='Lametta' title='" + lametta[i].name + "' price=" + lametta[i].price + " />";
             childNodeHTML += "<br>";
-            continue
+            continue;
         }
         childNodeHTML += "<h3>Kerzen</h3>";
         childNodeHTML += "<h4>Bitte Anzahl der Artikel eingeben:</h4>";
@@ -64,35 +64,35 @@ namespace aufgabe7 {
             childNodeHTML += candle[i].name;
             childNodeHTML += " <input type='text' id='numrCandles" + i + "' name='Kerzen' title='" + candle[i].name + "' price='" + candle[i].price + "' />";
             childNodeHTML += "<br>";
-            continue
+            continue;
         }
 
-        node.innerHTML += childNodeHTML
+        node.innerHTML += childNodeHTML;
     }
 
-    function init(_event: Event) {
-        let fieldset: HTMLElement = document.getElementById("fieldset")
+    function init(_event: Event): void {
+        let fieldset: HTMLElement = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
         document.getElementById("verify").addEventListener("click", verify);
         document.getElementById("async").addEventListener("click", sendRequestWithCustomData);
     }
 
-    function handleChange(_event: Event) {
+    function handleChange(_event: Event): void {
 
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
         console.log(target.id);
-        let articles: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input")
+        let articles: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
         let node: HTMLElement = document.getElementById("artikel");
         node.innerHTML = "";
 
         for (let i: number = 0; i < articles.length; i++) {
             let article: HTMLInputElement = articles[i];
-            let value: number = parseInt(article.value)
+            let value: number = parseInt(article.value);
             if (article.name == "Weihnachtskugeln" || article.name == "Lametta" || article.name == "Kerzen") {
                 let node: HTMLElement = document.getElementById("artikel");
                 let DOMValue: string = target.value;
-                target.setAttribute("value", DOMValue)
-                let value: number = parseInt(article.getAttribute("value"))
+                target.setAttribute("value", DOMValue);
+                let value: number = parseInt(article.getAttribute("value"));
                 let name: string = article.getAttribute("title");
                 let price: string = article.getAttribute("price");
                 let childNodeHTML: string;
@@ -146,7 +146,7 @@ namespace aufgabe7 {
 
         if (target.id == "strasse") {
             let node: HTMLElement = document.getElementById("strasse1");
-            let strasse1 = target.value;
+            let strasse1: string = target.value;
             let childNodeHTML: string;
             childNodeHTML = "";
             childNodeHTML += "<a name=" + target.name + " value=" + strasse1.substr(1) + ">";
@@ -157,7 +157,7 @@ namespace aufgabe7 {
 
         if (target.id == "hausnummer") {
             let node: HTMLElement = document.getElementById("hausnummer1");
-            let hausnummer1 = target.value;
+            let hausnummer1: string = target.value;
             let childNodeHTML: string;
             childNodeHTML = "";
             childNodeHTML += "<a name=" + target.name + " value=" + hausnummer1.substr(1) + ">";
@@ -170,10 +170,10 @@ namespace aufgabe7 {
 
 
 
-        price()
+        price();
     }
 
-    function price() {
+    function price(): void {
         let checkout: HTMLElement = document.getElementById("artikel");
         let price: number = 0;
         console.log(checkout.childNodes);
@@ -188,11 +188,11 @@ namespace aufgabe7 {
         HTML = " ";
         HTML += (treePrice + holderPrice + shipmentPrice + price);
         HTML += " Euro";
-        node.innerHTML = HTML
+        node.innerHTML = HTML;
     }
     function verify(): void {
-        if (treePrice == null || holderPrice == null || shipmentPrice == null || strasse1.length < 1  || hausnummer1.length < 1)
-        { document.getElementById("incomplete").innerHTML = "Fehlende Angaben!";}
+        if (treePrice == null || holderPrice == null || shipmentPrice == null || strasse1.length < 1 || hausnummer1.length < 1) { 
+        document.getElementById("incomplete").innerHTML = "Fehlende Angaben!"; }
         else {
             document.getElementById("incomplete").innerHTML = "";
         }

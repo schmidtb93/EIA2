@@ -174,7 +174,7 @@ var aufgabe7;
     }
     function verify() {
         if (treePrice == null || holderPrice == null || shipmentPrice == null || strasse1.length < 1 || hausnummer1.length < 1) {
-            document.getElementById("incomplete").innerHTML = "Fehlende Angaben!";
+            document.getElementById("incomplete").innerHTML = "Leider fehlt etwas...";
         }
         else {
             document.getElementById("incomplete").innerHTML = "";

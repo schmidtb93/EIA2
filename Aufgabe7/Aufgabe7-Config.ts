@@ -90,8 +90,8 @@ namespace aufgabe7 {
             let value: number = parseInt(article.value);
             if (article.name == "Weihnachtskugeln" || article.name == "Lametta" || article.name == "Kerzen") {
                 let node: HTMLElement = document.getElementById("artikel");
-                let DOMValue: string = target.value;
-                target.setAttribute("value", DOMValue);
+                let domValue: string = target.value;
+                target.setAttribute("value", domValue);
                 let value: number = parseInt(article.getAttribute("value"));
                 let name: string = article.getAttribute("title");
                 let price: string = article.getAttribute("price");

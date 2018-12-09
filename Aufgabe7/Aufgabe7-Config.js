@@ -82,8 +82,8 @@ var aufgabe7;
             let value = parseInt(article.value);
             if (article.name == "Weihnachtskugeln" || article.name == "Lametta" || article.name == "Kerzen") {
                 let node = document.getElementById("artikel");
-                let DOMValue = target.value;
-                target.setAttribute("value", DOMValue);
+                let domValue = target.value;
+                target.setAttribute("value", domValue);
                 let value = parseInt(article.getAttribute("value"));
                 let name = article.getAttribute("title");
                 let price = article.getAttribute("price");

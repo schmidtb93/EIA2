@@ -8,6 +8,13 @@ namespace aufgabe7 {
     let shipmentPrice: number = 0;
     let strasse1: string = "";
     let hausnummer1: string = "";
+    
+      function init(_event: Event): void {
+        let fieldset: HTMLElement = document.getElementById("fieldset");
+        fieldset.addEventListener("change", handleChange);
+        document.getElementById("verify").addEventListener("click", verify);
+        document.getElementById("async").addEventListener("click", sendRequestWithCustomData);
+    }
 
     function fillFieldset(): void {
 
@@ -36,8 +43,8 @@ namespace aufgabe7 {
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Adresse:</h3>";
-        childNodeHTML += "<input id='strasse' type='text' name='Text' placeholder='Strasse' required/>";
-        childNodeHTML += "<input id='hausnummer' type='text' name='Text' placeholder='Hausnummer' required/>";
+        childNodeHTML += "<input id='strasse' type='text' name='Strasse' placeholder='Strasse' required/>";
+        childNodeHTML += "<input id='hausnummer' type='text' name='Hausnummer' placeholder='Hausnummer' required/>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Weihnachtskugeln</h3>";
         childNodeHTML += "<h4>Bitte Anzahl der Artikel eingeben:</h4>";
@@ -70,12 +77,7 @@ namespace aufgabe7 {
         node.innerHTML += childNodeHTML;
     }
 
-    function init(_event: Event): void {
-        let fieldset: HTMLElement = document.getElementById("fieldset");
-        fieldset.addEventListener("change", handleChange);
-        document.getElementById("verify").addEventListener("click", verify);
-        document.getElementById("async").addEventListener("click", sendRequestWithCustomData);
-    }
+  
 
     function handleChange(_event: Event): void {
 
@@ -149,7 +151,7 @@ namespace aufgabe7 {
             let strasse1: string = target.value;
             let childNodeHTML: string;
             childNodeHTML = "";
-            childNodeHTML += "<a name=" + target.name + " value=" + strasse1.substr(1) + ">";
+            childNodeHTML += "<a name=" + target.name + " value=" + strasse1.substr(0) + ">";
             childNodeHTML += " " + target.value;
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
@@ -160,7 +162,7 @@ namespace aufgabe7 {
             let hausnummer1: string = target.value;
             let childNodeHTML: string;
             childNodeHTML = "";
-            childNodeHTML += "<a name=" + target.name + " value=" + hausnummer1.substr(1) + ">";
+            childNodeHTML += "<a name=" + target.name + " value=" + hausnummer1.substr(0) + ">";
             childNodeHTML += " " + target.value;
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
@@ -170,10 +172,10 @@ namespace aufgabe7 {
 
 
 
-        price();
+        calculatePrice();
     }
 
-    function price(): void {
+    function calculatePrice(): void {
         let checkout: HTMLElement = document.getElementById("artikel");
         let price: number = 0;
         console.log(checkout.childNodes);

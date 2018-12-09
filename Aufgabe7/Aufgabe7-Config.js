@@ -8,6 +8,12 @@ var aufgabe7;
     let shipmentPrice = 0;
     let strasse1 = "";
     let hausnummer1 = "";
+    function init(_event) {
+        let fieldset = document.getElementById("fieldset");
+        fieldset.addEventListener("change", handleChange);
+        document.getElementById("verify").addEventListener("click", verify);
+        document.getElementById("async").addEventListener("click", sendRequestWithCustomData);
+    }
     function fillFieldset() {
         let node = document.getElementById("fieldset");
         let childNodeHTML;
@@ -33,8 +39,8 @@ var aufgabe7;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Adresse:</h3>";
-        childNodeHTML += "<input id='strasse' type='text' name='Text' placeholder='Strasse' required/>";
-        childNodeHTML += "<input id='hausnummer' type='text' name='Text' placeholder='Hausnummer' required/>";
+        childNodeHTML += "<input id='strasse' type='text' name='Strasse' placeholder='Strasse' required/>";
+        childNodeHTML += "<input id='hausnummer' type='text' name='Hausnummer' placeholder='Hausnummer' required/>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Weihnachtskugeln</h3>";
         childNodeHTML += "<h4>Bitte Anzahl der Artikel eingeben:</h4>";
@@ -64,12 +70,6 @@ var aufgabe7;
             continue;
         }
         node.innerHTML += childNodeHTML;
-    }
-    function init(_event) {
-        let fieldset = document.getElementById("fieldset");
-        fieldset.addEventListener("change", handleChange);
-        document.getElementById("verify").addEventListener("click", verify);
-        document.getElementById("async").addEventListener("click", sendRequestWithCustomData);
     }
     function handleChange(_event) {
         let target = _event.target;
@@ -138,7 +138,7 @@ var aufgabe7;
             let strasse1 = target.value;
             let childNodeHTML;
             childNodeHTML = "";
-            childNodeHTML += "<a name=" + target.name + " value=" + strasse1.substr(1) + ">";
+            childNodeHTML += "<a name=" + target.name + " value=" + strasse1.substr(0) + ">";
             childNodeHTML += " " + target.value;
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
@@ -148,14 +148,14 @@ var aufgabe7;
             let hausnummer1 = target.value;
             let childNodeHTML;
             childNodeHTML = "";
-            childNodeHTML += "<a name=" + target.name + " value=" + hausnummer1.substr(1) + ">";
+            childNodeHTML += "<a name=" + target.name + " value=" + hausnummer1.substr(0) + ">";
             childNodeHTML += " " + target.value;
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        price();
+        calculatePrice();
     }
-    function price() {
+    function calculatePrice() {
         let checkout = document.getElementById("artikel");
         let price = 0;
         console.log(checkout.childNodes);

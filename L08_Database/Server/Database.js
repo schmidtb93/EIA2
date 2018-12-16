@@ -18,6 +18,7 @@ if (process.env.NODE_ENV == "production") {
 }
 // try to connect to database, then activate callback "handleConnect" 
 Mongo.MongoClient.connect(databaseURL, handleConnect);
+//Es wird eine neue Collection namens "students" angelegt
 // connect-handler receives two standard parameters, an error object and a database object
 function handleConnect(_e, _db) {
     if (_e)
@@ -37,6 +38,7 @@ exports.insert = insert;
 function handleInsert(_e) {
     console.log("Database insertion returned -> " + _e);
 }
+// try to fetch all documents from database, then activate callback
 function search(_callback, _matrikel) {
     var cursor = students.find();
     cursor.toArray(prepareAnswer);

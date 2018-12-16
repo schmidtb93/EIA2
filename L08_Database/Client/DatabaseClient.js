@@ -34,12 +34,12 @@ var DatabaseClient;
             console.log("test");
             let xhr = new XMLHttpRequest();
             xhr.open("GET", serverAddress + "?command=search&matrikel=" + matrikel, true);
-            xhr.addEventListener("readystatechange", searchMatrikel);
+            xhr.addEventListener("readystatechange", searchMatriculation);
             xhr.send();
         }
     }
-    function searchMatrikel(_event) {
-        let output = document.getElementById("outputSearch");
+    function searchMatriculation(_event) {
+        let output = document.getElementById("output");
         var xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             output.innerHTML = xhr.response;

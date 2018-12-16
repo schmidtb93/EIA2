@@ -36,8 +36,7 @@ namespace DatabaseClient {
 
     function search(_event: Event): void {
         let matrikel: number = parseInt(document.getElementById("matriculationSearch").getAttribute("value"));
-        if (matrikel.toString().length > 0) {
-            console.log("test");
+        if (matrikel.toString().length > 0) {       
             let xhr: XMLHttpRequest = new XMLHttpRequest();
             xhr.open("GET", serverAddress + "?command=search&matrikel=" + matrikel, true);
             xhr.addEventListener("readystatechange", searchMatriculation);

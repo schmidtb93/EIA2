@@ -48,7 +48,6 @@ export function search(_callback: Function, _matrikel: string): void {
         if (_e)
             _callback("Error" + _e);
         else
-
             for (let i: number = 0; i < studentArray.length; i++) {
                 if (studentArray[i].matrikel == Number(_matrikel)) {
                     _callback(JSON.stringify(studentArray[i]));

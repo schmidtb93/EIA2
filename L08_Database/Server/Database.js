@@ -13,7 +13,7 @@ let students;
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
     //databaseURL = "mongodb://testuser:testpassword@ds129532.mlab.com:29532/eia2";
-    databaseURL = "mongodb://testuser:testpassword@ds145183.mlab.com:45183/eia2";
+    databaseURL = "mongodb://Sebastian:eia2-2018@ds145183.mlab.com:45183/eia2";
     databaseName = "eia2";
 }
 // try to connect to database, then activate callback "handleConnect" 

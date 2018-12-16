@@ -39,7 +39,7 @@ var DatabaseClient;
         }
     }
     function searchMatriculation(_event) {
-        let output = document.getElementById("output");
+        let output = document.getElementById("outputResult");
         var xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             output.innerHTML = xhr.response;

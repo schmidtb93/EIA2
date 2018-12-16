@@ -46,7 +46,7 @@ namespace DatabaseClient {
     }
 
     function searchMatriculation(_event: ProgressEvent): void {
-        let output: HTMLElement = document.getElementById("output");
+        let output: HTMLElement = document.getElementById("outputResult");
         var xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
             output.innerHTML = xhr.response;

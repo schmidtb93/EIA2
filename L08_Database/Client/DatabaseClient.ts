@@ -40,13 +40,13 @@ namespace DatabaseClient {
             console.log("test");
             let xhr: XMLHttpRequest = new XMLHttpRequest();
             xhr.open("GET", serverAddress + "?command=search&matrikel=" + matrikel, true);
-            xhr.addEventListener("readystatechange", searchMatriculation);
+            xhr.addEventListener("readystatechange", searchMatrikel);
             xhr.send();
         }
     }
 
-    function searchMatriculation(_event: ProgressEvent): void {
-        let output: HTMLElement = document.getElementById("output");
+    function searchMatrikel(_event: ProgressEvent): void {
+        let output: HTMLElement = document.getElementById("outputSearch");
         var xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
             output.innerHTML = xhr.response;

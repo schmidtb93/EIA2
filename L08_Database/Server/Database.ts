@@ -28,7 +28,7 @@ function handleConnect(_e: Mongo.MongoError, _db: Mongo.Db): void {
     else {
         console.log("Connected to database!");
         db = _db.db(databaseName);
-        students = db.collection("students");
+        students = db.collection("Namen");
     }
 }
 
@@ -41,7 +41,6 @@ export function insert(_doc: StudentData): void {
 function handleInsert(_e: Mongo.MongoError): void {
     console.log("Database insertion returned -> " + _e);
 }
-
 export function search(_callback: Function, _matrikel: string): void {
     var cursor: Mongo.Cursor = students.find();
     cursor.toArray(prepareAnswer);

@@ -1,8 +1,7 @@
 var DatabaseClient;
 (function (DatabaseClient) {
     window.addEventListener("load", init);
-    let serverAddress = "http://localhost:8100";
-    //let serverAddress: string = "https://node-server-sebastian.herokuapp.com/";    
+    let serverAddress = "https://database-eia2-sebastian.herokuapp.com/";
     function init(_event) {
         console.log("Init");
         let insertButton = document.getElementById("insert");
@@ -18,6 +17,27 @@ var DatabaseClient;
         query += "&matrikel=" + inputs[2].value;
         console.log(query);
         sendRequest(query, handleInsertResponse);
+    }
+    function change(_event) {
+        let target = _event.target;
+        target.setAttribute("value", target.value);
+    }
+    function search(_event) {
+        let matrikel = parseInt(document.getElementById("matrikelsearch").getAttribute("value"));
+        if (matrikel.toString().length > 0) {
+            console.log("test");
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", serverAddress + "?command=search&matrikel=" + matrikel, true);
+            xhr.addEventListener("readystatechange", searchMatrikel);
+            xhr.send();
+        }
+    }
+    function searchMatrikel(_event) {
+        let output = document.getElementById("outputSearch");
+        var xhr = _event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            output.innerHTML = xhr.response;
+        }
     }
     function refresh(_event) {
         let query = "command=refresh";

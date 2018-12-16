@@ -9,8 +9,8 @@ namespace DatabaseClient {
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
-        document.getElementById("matrikelsearch").addEventListener("input", change);
-        document.getElementById("buttonsearch").addEventListener("click", search);
+        document.getElementById("matriculationSearch").addEventListener("input", change);
+        document.getElementById("searchButton").addEventListener("click", search);
     }
 
     function insert(_event: Event): void {
@@ -35,7 +35,7 @@ namespace DatabaseClient {
     
 
     function search(_event: Event): void {
-        let matrikel: number = parseInt(document.getElementById("matrikelsearch").getAttribute("value"));
+        let matrikel: number = parseInt(document.getElementById("matriculationSearch").getAttribute("value"));
         if (matrikel.toString().length > 0) {
             console.log("test");
             let xhr: XMLHttpRequest = new XMLHttpRequest();

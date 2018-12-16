@@ -8,8 +8,8 @@ var DatabaseClient;
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
-        document.getElementById("matrikelsearch").addEventListener("input", change);
-        document.getElementById("buttonsearch").addEventListener("click", search);
+        document.getElementById("matriculationSearch").addEventListener("input", change);
+        document.getElementById("searchButton").addEventListener("click", search);
     }
     function insert(_event) {
         let inputs = document.getElementsByTagName("input");
@@ -29,7 +29,7 @@ var DatabaseClient;
         target.setAttribute("value", target.value);
     }
     function search(_event) {
-        let matrikel = parseInt(document.getElementById("matrikelsearch").getAttribute("value"));
+        let matrikel = parseInt(document.getElementById("matriculationSearch").getAttribute("value"));
         if (matrikel.toString().length > 0) {
             console.log("test");
             let xhr = new XMLHttpRequest();

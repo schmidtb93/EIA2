@@ -42,21 +42,22 @@ function handleInsert(_e: Mongo.MongoError): void {
     console.log("Database insertion returned -> " + _e);
 }
 
-export function search(_callback: Function, _matrikel: Function): void {
+export function search(_callback: Function, _matrikel: string): void {
     var cursor: Mongo.Cursor = students.find();
     cursor.toArray(prepareAnswer);
-
     function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void {
         if (_e)
             _callback("Error" + _e);
         else
+
             for (let i: number = 0; i < studentArray.length; i++) {
                 if (studentArray[i].matrikel == Number(_matrikel)) {
                     _callback(JSON.stringify(studentArray[i]));
                 }
+            }
+    }
 }
-    }
-    }
+
 // try to fetch all documents from database, then activate callback
 export function findAll(_callback: Function): void {
     // cursor points to the retreived set of documents in memory
@@ -73,4 +74,5 @@ export function findAll(_callback: Function): void {
             // stringify creates a json-string, passed it back to _callback
             _callback(JSON.stringify(studentArray));
     }
+    
 }

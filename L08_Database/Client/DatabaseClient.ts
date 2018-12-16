@@ -3,12 +3,14 @@ namespace DatabaseClient {
  
     let serverAddress: string = "https://database-eia2-sebastian.herokuapp.com/";    
 
-    function init(_event: Event): void {
+  function init(_event: Event): void {
         console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        document.getElementById("matrikelsearch").addEventListener("input", change);
+        document.getElementById("buttonsearch").addEventListener("click", search);
     }
 
     function insert(_event: Event): void {
@@ -20,6 +22,12 @@ namespace DatabaseClient {
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }
+
+    function refresh(_event: Event): void {
+        let query: string = "command=refresh";
+        sendRequest(query, handleFindResponse);
+    }
+    
     function change(_event: Event): void {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
         target.setAttribute("value", target.value)
@@ -43,11 +51,6 @@ namespace DatabaseClient {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             output.innerHTML = xhr.response;
         }
-}
-
-    function refresh(_event: Event): void {
-        let query: string = "command=refresh";
-        sendRequest(query, handleFindResponse);
     }
 
     function sendRequest(_query: string, _callback: EventListener): void {

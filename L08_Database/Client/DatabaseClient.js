@@ -8,6 +8,8 @@ var DatabaseClient;
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        document.getElementById("matrikelsearch").addEventListener("input", change);
+        document.getElementById("buttonsearch").addEventListener("click", search);
     }
     function insert(_event) {
         let inputs = document.getElementsByTagName("input");
@@ -17,6 +19,10 @@ var DatabaseClient;
         query += "&matrikel=" + inputs[2].value;
         console.log(query);
         sendRequest(query, handleInsertResponse);
+    }
+    function refresh(_event) {
+        let query = "command=refresh";
+        sendRequest(query, handleFindResponse);
     }
     function change(_event) {
         let target = _event.target;
@@ -38,10 +44,6 @@ var DatabaseClient;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             output.innerHTML = xhr.response;
         }
-    }
-    function refresh(_event) {
-        let query = "command=refresh";
-        sendRequest(query, handleFindResponse);
     }
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();

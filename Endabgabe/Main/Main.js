@@ -11,9 +11,9 @@ var endabgabe;
     function init() {
         document.getElementById("start").addEventListener("click", canvasDraw);
         document.getElementById("FinalResults").style.display = "none";
-        document.getElementById("Highscores").addEventListener("click", highScores);
+        document.getElementById("Highscores").addEventListener("click", lowScores);
     }
-    function highScores() {
+    function lowScores() {
         document.getElementById("div").style.display = "none";
         document.getElementById("FinalResults").style.display = "initial";
         document.getElementById("h3").style.display = "none";
@@ -59,7 +59,7 @@ var endabgabe;
         drawCloud4();
         imgData = endabgabe.crc2.getImageData(0, 0, 600, 800);
         for (let i = 0; i < 300; i++) {
-            let flake = new endabgabe.Snowflake();
+            let flake = new endabgabe.Snow();
             flake.x = Math.random() * endabgabe.crc2.canvas.width;
             flake.y = Math.random() * endabgabe.crc2.canvas.height;
             flake.dy = Math.random() * 4;

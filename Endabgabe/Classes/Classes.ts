@@ -13,7 +13,7 @@ namespace endabgabe {
         move(): void { };
         draw(): void { };
     }
-    export class Snowflake extends Move {
+    export class Snow extends Move {
         move(): void {
             this.y += this.dy;
             
@@ -72,10 +72,10 @@ namespace endabgabe {
 
         draw(): void {
             if (this.state == "down") {
-                this.drawChild();
+                this.drawChild1();
             }
                if (this.state == "up") {
-                this.childUp();
+                this.drawChild2();
             }
             if (this.state == "hit") {
                 this.drawHit();
@@ -85,7 +85,7 @@ namespace endabgabe {
 
         }
 
-        childUp(): void {
+        drawChild2(): void {
             crc2.fillStyle = "#7eed21";
             crc2.strokeStyle = "#7eed21";
             crc2.lineWidth = 3;
@@ -246,7 +246,7 @@ namespace endabgabe {
             
         }
 
-        drawChild(): void {
+        drawChild1(): void {
             crc2.fillStyle = "#9b65c6";
             crc2.strokeStyle = "#9b65c6";
             crc2.lineWidth = 3;
@@ -269,17 +269,7 @@ namespace endabgabe {
             crc2.closePath();
             crc2.stroke();
 
-            crc2.beginPath();
-            crc2.moveTo(this.x, this.y + 10);
-            crc2.lineTo(this.x - 15, this.y + 15);
-            crc2.closePath();
-            crc2.stroke();
-            
-             crc2.beginPath();
-            crc2.moveTo(this.x, this.y + 10);
-            crc2.lineTo(this.x - 15, this.y + 25);
-            crc2.closePath();
-            crc2.stroke();
+           
 
             crc2.strokeStyle = "#7b7343";
             crc2.fillStyle = "#7b7343";
@@ -306,7 +296,7 @@ namespace endabgabe {
         }
     }
  export class Snowball extends Move {
-        radius: number = 30;
+        radius: number = 50;
 
 
         move(): void {

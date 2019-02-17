@@ -15,10 +15,10 @@ namespace endabgabe {
     function init(): void {
         document.getElementById("start").addEventListener("click", canvasDraw);
         document.getElementById("FinalResults").style.display = "none";
-        document.getElementById("Highscores").addEventListener("click", highScores);
+        document.getElementById("Highscores").addEventListener("click", lowScores);
     }
 
-    function highScores(): void {
+    function lowScores(): void {
         document.getElementById("div").style.display = "none";
         document.getElementById("FinalResults").style.display = "initial";
         document.getElementById("h3").style.display = "none";
@@ -69,7 +69,7 @@ namespace endabgabe {
         imgData = crc2.getImageData(0, 0, 600, 800);
 
         for (let i: number = 0; i < 300; i++) {
-            let flake: Move = new Snowflake();
+            let flake: Move = new Snow();
             flake.x = Math.random() * crc2.canvas.width;
             flake.y = Math.random() * crc2.canvas.height;
             flake.dy = Math.random() * 4 ;

@@ -14,7 +14,7 @@ var endabgabe;
         ;
     }
     endabgabe.Move = Move;
-    class Snowflake extends Move {
+    class Snow extends Move {
         move() {
             this.y += this.dy;
             if (this.y > 700) {
@@ -34,7 +34,7 @@ var endabgabe;
             endabgabe.crc2.lineWidth = 4;
         }
     }
-    endabgabe.Snowflake = Snowflake;
+    endabgabe.Snow = Snow;
     class Tree extends Scenery {
         draw() {
             endabgabe.crc2.lineWidth = 1;
@@ -59,16 +59,16 @@ var endabgabe;
     class ChildCarriage extends Move {
         draw() {
             if (this.state == "down") {
-                this.drawChild();
+                this.drawChild1();
             }
             if (this.state == "up") {
-                this.childUp();
+                this.drawChild2();
             }
             if (this.state == "hit") {
                 this.drawHit();
             }
         }
-        childUp() {
+        drawChild2() {
             endabgabe.crc2.fillStyle = "#7eed21";
             endabgabe.crc2.strokeStyle = "#7eed21";
             endabgabe.crc2.lineWidth = 3;
@@ -207,7 +207,7 @@ var endabgabe;
             endabgabe.crc2.closePath();
             endabgabe.crc2.stroke();
         }
-        drawChild() {
+        drawChild1() {
             endabgabe.crc2.fillStyle = "#9b65c6";
             endabgabe.crc2.strokeStyle = "#9b65c6";
             endabgabe.crc2.lineWidth = 3;
@@ -224,16 +224,6 @@ var endabgabe;
             endabgabe.crc2.beginPath();
             endabgabe.crc2.moveTo(this.x, this.y + 30);
             endabgabe.crc2.lineTo(this.x - 20, this.y + 35);
-            endabgabe.crc2.closePath();
-            endabgabe.crc2.stroke();
-            endabgabe.crc2.beginPath();
-            endabgabe.crc2.moveTo(this.x, this.y + 10);
-            endabgabe.crc2.lineTo(this.x - 15, this.y + 15);
-            endabgabe.crc2.closePath();
-            endabgabe.crc2.stroke();
-            endabgabe.crc2.beginPath();
-            endabgabe.crc2.moveTo(this.x, this.y + 10);
-            endabgabe.crc2.lineTo(this.x - 15, this.y + 25);
             endabgabe.crc2.closePath();
             endabgabe.crc2.stroke();
             endabgabe.crc2.strokeStyle = "#7b7343";
@@ -261,7 +251,7 @@ var endabgabe;
     class Snowball extends Move {
         constructor(...args) {
             super(...args);
-            this.radius = 30;
+            this.radius = 50;
         }
         move() {
             this.radius -= 1;

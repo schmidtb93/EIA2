@@ -35,23 +35,10 @@ namespace endabgabe {
     }
 
 
-    function Countdown(_seconds: number) {
-        var counter: number = _seconds;
-        var interval = setInterval(() => {
-            counter--;
-            document.getElementById("Counter").innerHTML = "Verbleibende Zeit: " + counter.toString() + "";
-            if (counter < 0) {
-                clearInterval(interval);
-                endscreen()
-                counter--;
-            };
-        }, 1000);
-    };
-
+  
 
     function canvasDraw(_event: Event): void {
-        let seconds: number = 60;
-        Countdown(seconds);
+    
         let button: HTMLElement = document.getElementById("div");
         button.parentNode.removeChild(button);
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
@@ -69,18 +56,18 @@ namespace endabgabe {
         imgData = crc2.getImageData(0, 0, 600, 800);
 
         for (let i: number = 0; i < 300; i++) {
-            let flake: Move = new Snow();
-            flake.x = Math.random() * crc2.canvas.width;
-            flake.y = Math.random() * crc2.canvas.height;
-            flake.dy = Math.random() * 4;
-            snowflakes.push(flake);
+            let snow1: Move = new Snow();
+            snow1.x = Math.random() * crc2.canvas.width;
+            snow1.y = Math.random() * crc2.canvas.height;
+            snow1.dy = Math.random() * 4;
+            snowflakes.push(snow1);
         }
 
         for (let i: number = 0; i < 7; i++) {
             let child1: ChildCarriage = new ChildCarriage();
             child1.state = "down"
             child1.x = 600;
-            child1.y = Math.random() * 330 + 300;
+            child1.y = Math.random() * 400 + 400;
             child1.dx = Math.random() * 3 - 5;
             child1.dy = - child1.dx;
             children1.push(child1);
@@ -192,8 +179,8 @@ namespace endabgabe {
     }
 
     function hillSide() {
-        crc2.fillStyle = "white";
-        crc2.strokeStyle = "white";
+        crc2.fillStyle = "#FFFFFF";
+        crc2.strokeStyle = "#FFFFFF";
         crc2.lineWidth = 3;
 
         crc2.beginPath();
@@ -258,8 +245,7 @@ namespace endabgabe {
         crc2.fill();
     }
     function endscreen(): void {
-        document.getElementById("canvas").style.display = "none";
-        document.getElementById("Counter").style.display = "none";
+        document.getElementById("canvas").style.display = "none";  
         document.getElementById("Baelle").style.display = "none";
         document.getElementById("score").style.display = "none";
         document.getElementById("FinalResults").style.display = "initial";

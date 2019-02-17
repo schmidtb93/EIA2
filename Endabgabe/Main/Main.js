@@ -28,23 +28,7 @@ var endabgabe;
         let canvas = document.getElementsByTagName("canvas")[0];
         canvas.addEventListener("click", mouseClick);
     }
-    function Countdown(_seconds) {
-        var counter = _seconds;
-        var interval = setInterval(() => {
-            counter--;
-            document.getElementById("Counter").innerHTML = "Verbleibende Zeit: " + counter.toString() + "";
-            if (counter < 0) {
-                clearInterval(interval);
-                endscreen();
-                counter--;
-            }
-            ;
-        }, 1000);
-    }
-    ;
     function canvasDraw(_event) {
-        let seconds = 60;
-        Countdown(seconds);
         let button = document.getElementById("div");
         button.parentNode.removeChild(button);
         let canvas = document.getElementsByTagName("canvas")[0];
@@ -59,17 +43,17 @@ var endabgabe;
         drawCloud4();
         imgData = endabgabe.crc2.getImageData(0, 0, 600, 800);
         for (let i = 0; i < 300; i++) {
-            let flake = new endabgabe.Snow();
-            flake.x = Math.random() * endabgabe.crc2.canvas.width;
-            flake.y = Math.random() * endabgabe.crc2.canvas.height;
-            flake.dy = Math.random() * 4;
-            snowflakes.push(flake);
+            let snow1 = new endabgabe.Snow();
+            snow1.x = Math.random() * endabgabe.crc2.canvas.width;
+            snow1.y = Math.random() * endabgabe.crc2.canvas.height;
+            snow1.dy = Math.random() * 4;
+            snowflakes.push(snow1);
         }
         for (let i = 0; i < 7; i++) {
             let child1 = new endabgabe.ChildCarriage();
             child1.state = "down";
             child1.x = 600;
-            child1.y = Math.random() * 330 + 300;
+            child1.y = Math.random() * 400 + 400;
             child1.dx = Math.random() * 3 - 5;
             child1.dy = -child1.dx;
             children1.push(child1);
@@ -160,8 +144,8 @@ var endabgabe;
         endabgabe.crc2.fill();
     }
     function hillSide() {
-        endabgabe.crc2.fillStyle = "white";
-        endabgabe.crc2.strokeStyle = "white";
+        endabgabe.crc2.fillStyle = "#FFFFFF";
+        endabgabe.crc2.strokeStyle = "#FFFFFF";
         endabgabe.crc2.lineWidth = 3;
         endabgabe.crc2.beginPath();
         endabgabe.crc2.moveTo(0, 800);
@@ -216,7 +200,6 @@ var endabgabe;
     }
     function endscreen() {
         document.getElementById("canvas").style.display = "none";
-        document.getElementById("Counter").style.display = "none";
         document.getElementById("Baelle").style.display = "none";
         document.getElementById("score").style.display = "none";
         document.getElementById("FinalResults").style.display = "initial";

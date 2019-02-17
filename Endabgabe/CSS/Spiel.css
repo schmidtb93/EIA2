@@ -29,10 +29,7 @@ p {
 }
 
 /*Schriftarten*/
-h1 {
-	text-align: center;
-	color: #8A4B08;
-}
+
 
 h2 {
 	font-size: 20px;
@@ -98,33 +95,26 @@ button {
 }
 /*Ingame Stats*/
 #Baelle {
-	margin-top: 20px;
+	margin-top: 200px;
 	font-family: 'Gloria Hallelujah', cursive;
 	margin-left: 380px;
-	width: 400px;
+	width: 300px;
 	float: right;
+	margin-right: 25%;
 	font-size: 20px;
+	border: 2px solid black;
 
-}
-
-#Counter {
-	width: 400px;
-	font-family: 'Gloria Hallelujah', cursive;
-	margin-top: 20px;
-	margin-left: 380px;
-	float: right;
-	font-size: 20px;
-	font-color: red;
 }
 
 #score {
-	width: 400px;
+	width: 300px;
 	font-family: 'Gloria Hallelujah', cursive;
-	margin-top: 20px;
+	margin-top: 50px;
 	margin-left: 380px;
 	float: right;
 	font-size: 20px;
-	font-color: red;
+	margin-right: 25%;
+	border: 2px solid black;
 }
 
 
@@ -135,12 +125,14 @@ button {
 }
 
 #showScores {
+	font-family: 'Gloria Hallelujah', cursive;
 	font-size: 20px;
 }
 
 
 
 #name {
+	font-family: 'Gloria Hallelujah', cursive;
 	height: 70px;
 	width: 250px;
 	margin-top: 2px;
@@ -164,7 +156,6 @@ button {
 
 #input {
 	font-family: 'Gloria Hallelujah', cursive;
-	
 	width: 300px;
 	height: 200px;
 	font-size: 30px;

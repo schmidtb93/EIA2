@@ -14,7 +14,7 @@ var endabgabe;
         let inputs = document.getElementsByTagName("input");
         let query = "command=insert";
         query += "&name=" + inputs[0].value;
-        query += "&score=" + document.getElementById("endScore").getAttribute("value");
+        query += "&score=" + document.getElementById("results").getAttribute("value");
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }

@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah')
+	;
+
+/*Allgemeines/ Startseite*/
+body {
+	background-color: #ffffcc;
+}
+
+
+p {
+	text-align: center;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 50px;
+}
+
+#div {
+	background: linear-gradient(to bottom, white, #ffff80);
+	font-family: 'Gloria Hallelujah', cursive;
+	position: absolute;
+	height: 60%;
+	left: 33%;
+	right: 33%;
+	border: 2px solid black;
+	margin-top: 10%;
+	padding: 5px;
+	z-index: 3;
+}
+
+/*Schriftarten*/
+h1 {
+	text-align: center;
+	color: #8A4B08;
+}
+
+h2 {
+	font-size: 20px;
+	font-style: italic;
+}
+
+h3 {
+	font-family: 'Gloria Hallelujah', cursive;
+	text-decoration: underline;
+	font-size: 40px;
+	margin: 1px;
+}
+
+/*Buttons*/
+button {
+	
+	background-color: #c5a27a;
+	border: 2px solid black;
+	width: 200px;
+	
+	height: 50px;
+	margin-left: 5em;
+	
+	margin-top: 1em;
+}
+
+#start {
+	margin-left: 9em;
+	font-family: 'Gloria Hallelujah', cursive;
+	
+}
+
+#Highscores {
+	margin-left: 9em;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+#scores {
+	font-family: 'Gloria Hallelujah', cursive;
+	margin-left: 2em;
+	font-align: 2px;
+}
+
+#results {
+	font-family: 'Gloria Hallelujah', cursive;
+	left: 18em;
+	font-size: 30px;
+	margin: 1em;
+}
+
+#restart {
+	font-family: 'Gloria Hallelujah', cursive;
+	width: 400px;
+	font-size: 20px;
+	margin-left: 25em;
+}
+
+#insert {
+	font-family: 'Gloria Hallelujah', cursive;
+}
+#refresh {
+	font-family: 'Gloria Hallelujah', cursive;
+}
+/*Ingame Stats*/
+#Baelle {
+	margin-top: 20px;
+	font-family: 'Gloria Hallelujah', cursive;
+	margin-left: 380px;
+	width: 200px;
+	float: right;
+	font-size: 20px;
+
+}
+
+#timer {
+	width: 200px;
+	font-family: 'Gloria Hallelujah', cursive;
+	margin-top: 20px;
+	margin-left: 380px;
+	float: right;
+	font-size: 20px;
+	font-color: red;
+}
+
+#score {
+	width: 200px;
+	font-family: 'Gloria Hallelujah', cursive;
+	margin-top: 20px;
+	margin-left: 380px;
+	float: right;
+	font-size: 20px;
+	font-color: red;
+}
+
+
+#canvas {
+	position: absolute;
+	z-index: 2;
+	float: left;
+}
+
+#showScores {
+	font-size: 20px;
+}
+
+
+
+#name {
+	height: 70px;
+	width: 250px;
+	margin-top: 2px;
+}
+
+
+
+
+
+//Endspielscreen
+
+#FinalResults {
+	background: linear-gradient(to bottom, white, #ffff80);
+	position: absolute;
+	width: 100%;
+	heigth: 100%;
+	
+	
+	padding: 5px;
+}
+
+#input {
+	font-family: 'Gloria Hallelujah', cursive;
+	
+	width: 300px;
+	height: 200px;
+	font-size: 30px;
+	display: inline-block;
+}
+
+}
+#output {
+	font-family: 'Gloria Hallelujah', cursive;
+
+	width: 300px;
+	height: 100px;
+	font-size: 30px;
+
+
+}

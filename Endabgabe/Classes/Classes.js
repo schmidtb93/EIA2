@@ -17,7 +17,7 @@ var endabgabe;
     class Snow extends Move {
         move() {
             this.y += this.dy;
-            if (this.y > 700) {
+            if (this.y > 800) {
                 this.y = 0;
             }
             this.draw();
@@ -73,7 +73,7 @@ var endabgabe;
             endabgabe.crc2.strokeStyle = "#7eed21";
             endabgabe.crc2.lineWidth = 3;
             endabgabe.crc2.beginPath();
-            endabgabe.crc2.arc((this.x), (this.y), 5, 0, 2 * Math.PI);
+            endabgabe.crc2.arc((this.x), (this.y), 7, 0, 2 * Math.PI);
             endabgabe.crc2.closePath();
             endabgabe.crc2.stroke();
             endabgabe.crc2.fill();
@@ -212,7 +212,7 @@ var endabgabe;
             endabgabe.crc2.strokeStyle = "#9b65c6";
             endabgabe.crc2.lineWidth = 3;
             endabgabe.crc2.beginPath();
-            endabgabe.crc2.arc((this.x), (this.y), 5, 0, 2 * Math.PI);
+            endabgabe.crc2.arc((this.x), (this.y), 7, 0, 2 * Math.PI);
             endabgabe.crc2.closePath();
             endabgabe.crc2.stroke();
             endabgabe.crc2.fill();

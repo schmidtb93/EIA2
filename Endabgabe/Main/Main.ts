@@ -2,6 +2,12 @@ namespace endabgabe {
 
     window.addEventListener("load", init);
 
+    function init(): void {
+        document.getElementById("start").addEventListener("click", canvasDraw);
+        document.getElementById("FinalResults").style.display = "none";
+        document.getElementById("Highscores").addEventListener("click", lowScores);
+    }
+    
     export let crc2: CanvasRenderingContext2D;
     let fps: number = 25;
     let snowflakes: Scenery[] = [];
@@ -11,12 +17,6 @@ namespace endabgabe {
     let score: number = 0;
     let imgData: ImageData;
 
-
-    function init(): void {
-        document.getElementById("start").addEventListener("click", canvasDraw);
-        document.getElementById("FinalResults").style.display = "none";
-        document.getElementById("Highscores").addEventListener("click", lowScores);
-    }
 
     function lowScores(): void {
         document.getElementById("div").style.display = "none";
@@ -36,19 +36,19 @@ namespace endabgabe {
 
 
     function Countdown(_seconds: number) {
-     var counter: number = _seconds;
-    var interval = setInterval(() => {
-      counter--;
-    document.getElementById("timer").innerHTML = "Timer: " + counter.toString() + "";
-    if (counter < 0) {
-      clearInterval(interval);
-     end()
-     counter--;
-    };
-    }, 1000);
+        var counter: number = _seconds;
+        var interval = setInterval(() => {
+            counter--;
+            document.getElementById("Counter").innerHTML = "Verbleibende Zeit: " + counter.toString() + "";
+            if (counter < 0) {
+                clearInterval(interval);
+                endscreen()
+                counter--;
+            };
+        }, 1000);
     };
 
- 
+
     function canvasDraw(_event: Event): void {
         let seconds: number = 60;
         Countdown(seconds);
@@ -57,7 +57,7 @@ namespace endabgabe {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         canvas.addEventListener("click", mouseClick);
         crc2 = canvas.getContext("2d");
-        
+
         hillSide();
         drawSky();
         drawSun();
@@ -65,14 +65,14 @@ namespace endabgabe {
         drawCloud2();
         drawCloud3();
         drawCloud4();
-   
+
         imgData = crc2.getImageData(0, 0, 600, 800);
 
         for (let i: number = 0; i < 300; i++) {
             let flake: Move = new Snow();
             flake.x = Math.random() * crc2.canvas.width;
             flake.y = Math.random() * crc2.canvas.height;
-            flake.dy = Math.random() * 4 ;
+            flake.dy = Math.random() * 4;
             snowflakes.push(flake);
         }
 
@@ -114,7 +114,7 @@ namespace endabgabe {
 
         window.setTimeout(update, 1000 / fps);
         crc2.putImageData(imgData, 0, 0);
-        document.getElementById("score").innerHTML = "Treffer:" + score.toString() + "";
+        document.getElementById("score").innerHTML = "Maluspunkte:" + score.toString() + "";
 
 
         for (let i: number = 0; i < 300; i++) {
@@ -143,19 +143,19 @@ namespace endabgabe {
                     snowballs[i].move();
                     snowballs[i].draw();
                     for (let i2: number = 0; i2 < children1.length; i2++) {
-                      
+
                         if (snowballs[i].hit1(children1[i2].x, children1[i2].y) == true && children1[i2].state == "down") {
                             children1[i2].state = "hit";
-                            score += (children1[i2].dx * children1[i2].dy) * -10;
+                            score += (children1[i2].dx * children1[i2].dy);
                             score = Math.floor(score);
 
                         }
                         else if (snowballs[i].hit2(children1[i2].x, children1[i2].y) == true && children1[i2].state == "up") {
                             children1[i2].state = "hit";
-                            score += (children1[i2].dx * children1[i2].dy) * -10;
+                            score += (children1[i2].dx * children1[i2].dy);
                             score = Math.floor(score);
                         }
-                       
+
                     }
                 }
 
@@ -167,7 +167,7 @@ namespace endabgabe {
 
         }
         if (snowballs.length > 30) {
-            end();
+            endscreen();
 
         }
     }
@@ -257,9 +257,9 @@ namespace endabgabe {
         crc2.fillStyle = "#FFFFFF";
         crc2.fill();
     }
-   function end(): void {
+    function endscreen(): void {
         document.getElementById("canvas").style.display = "none";
-        document.getElementById("timer").style.display = "none";
+        document.getElementById("Counter").style.display = "none";
         document.getElementById("Baelle").style.display = "none";
         document.getElementById("score").style.display = "none";
         document.getElementById("FinalResults").style.display = "initial";

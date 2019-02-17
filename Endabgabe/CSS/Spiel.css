@@ -101,14 +101,14 @@ button {
 	margin-top: 20px;
 	font-family: 'Gloria Hallelujah', cursive;
 	margin-left: 380px;
-	width: 200px;
+	width: 400px;
 	float: right;
 	font-size: 20px;
 
 }
 
-#timer {
-	width: 200px;
+#Counter {
+	width: 400px;
 	font-family: 'Gloria Hallelujah', cursive;
 	margin-top: 20px;
 	margin-left: 380px;
@@ -118,7 +118,7 @@ button {
 }
 
 #score {
-	width: 200px;
+	width: 400px;
 	font-family: 'Gloria Hallelujah', cursive;
 	margin-top: 20px;
 	margin-left: 380px;

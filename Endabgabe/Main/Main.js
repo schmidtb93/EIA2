@@ -1,6 +1,11 @@
 var endabgabe;
 (function (endabgabe) {
     window.addEventListener("load", init);
+    function init() {
+        document.getElementById("start").addEventListener("click", canvasDraw);
+        document.getElementById("FinalResults").style.display = "none";
+        document.getElementById("Highscores").addEventListener("click", lowScores);
+    }
     let fps = 25;
     let snowflakes = [];
     let children1 = [];
@@ -8,11 +13,6 @@ var endabgabe;
     let snowballs = [];
     let score = 0;
     let imgData;
-    function init() {
-        document.getElementById("start").addEventListener("click", canvasDraw);
-        document.getElementById("FinalResults").style.display = "none";
-        document.getElementById("Highscores").addEventListener("click", lowScores);
-    }
     function lowScores() {
         document.getElementById("div").style.display = "none";
         document.getElementById("FinalResults").style.display = "initial";
@@ -32,10 +32,10 @@ var endabgabe;
         var counter = _seconds;
         var interval = setInterval(() => {
             counter--;
-            document.getElementById("timer").innerHTML = "Timer: " + counter.toString() + "";
+            document.getElementById("Counter").innerHTML = "Verbleibende Zeit: " + counter.toString() + "";
             if (counter < 0) {
                 clearInterval(interval);
-                end();
+                endscreen();
                 counter--;
             }
             ;
@@ -98,7 +98,7 @@ var endabgabe;
         document.getElementById("Baelle").innerHTML = "Alle Schnebaelle geworfen";
         window.setTimeout(update, 1000 / fps);
         endabgabe.crc2.putImageData(imgData, 0, 0);
-        document.getElementById("score").innerHTML = "Treffer:" + score.toString() + "";
+        document.getElementById("score").innerHTML = "Maluspunkte:" + score.toString() + "";
         for (let i = 0; i < 300; i++) {
             let flake = snowflakes[i];
             flake.move();
@@ -125,12 +125,12 @@ var endabgabe;
                     for (let i2 = 0; i2 < children1.length; i2++) {
                         if (snowballs[i].hit1(children1[i2].x, children1[i2].y) == true && children1[i2].state == "down") {
                             children1[i2].state = "hit";
-                            score += (children1[i2].dx * children1[i2].dy) * -10;
+                            score += (children1[i2].dx * children1[i2].dy);
                             score = Math.floor(score);
                         }
                         else if (snowballs[i].hit2(children1[i2].x, children1[i2].y) == true && children1[i2].state == "up") {
                             children1[i2].state = "hit";
-                            score += (children1[i2].dx * children1[i2].dy) * -10;
+                            score += (children1[i2].dx * children1[i2].dy);
                             score = Math.floor(score);
                         }
                     }
@@ -141,7 +141,7 @@ var endabgabe;
             document.getElementById("Baelle").innerHTML = "Schneebaelle:" + snowballCount.toString() + "";
         }
         if (snowballs.length > 30) {
-            end();
+            endscreen();
         }
     }
     function draw() {
@@ -214,9 +214,9 @@ var endabgabe;
         endabgabe.crc2.fillStyle = "#FFFFFF";
         endabgabe.crc2.fill();
     }
-    function end() {
+    function endscreen() {
         document.getElementById("canvas").style.display = "none";
-        document.getElementById("timer").style.display = "none";
+        document.getElementById("Counter").style.display = "none";
         document.getElementById("Baelle").style.display = "none";
         document.getElementById("score").style.display = "none";
         document.getElementById("FinalResults").style.display = "initial";

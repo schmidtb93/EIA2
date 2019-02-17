@@ -17,7 +17,7 @@ namespace endabgabe {
         move(): void {
             this.y += this.dy;
             
-            if (this.y > 700) {
+            if (this.y > 800) {
                 this.y = 0;
             }
             this.draw();
@@ -90,7 +90,7 @@ namespace endabgabe {
             crc2.strokeStyle = "#7eed21";
             crc2.lineWidth = 3;
             crc2.beginPath();
-            crc2.arc((this.x), (this.y), 5, 0, 2 * Math.PI);
+            crc2.arc((this.x), (this.y), 7, 0, 2 * Math.PI);
 
             crc2.closePath();
             crc2.stroke();
@@ -251,7 +251,7 @@ namespace endabgabe {
             crc2.strokeStyle = "#9b65c6";
             crc2.lineWidth = 3;
             crc2.beginPath();
-            crc2.arc((this.x), (this.y), 5, 0, 2 * Math.PI);
+            crc2.arc((this.x), (this.y), 7, 0, 2 * Math.PI);
             crc2.closePath();
             crc2.stroke();
             crc2.fill();

@@ -10,7 +10,7 @@ namespace endabgabe {
     
     export let crc2: CanvasRenderingContext2D;
     let fps: number = 25;
-    let snowflakes: Scenery[] = [];
+    let snow2: Scenery[] = [];
     let children1: ChildCarriage[] = [];
     let trees: Scenery[] = [];
     let snowballs: Snowball[] = [];
@@ -60,7 +60,7 @@ namespace endabgabe {
             snow1.x = Math.random() * crc2.canvas.width;
             snow1.y = Math.random() * crc2.canvas.height;
             snow1.dy = Math.random() * 4;
-            snowflakes.push(snow1);
+            snow2.push(snow1);
         }
 
         for (let i: number = 0; i < 7; i++) {
@@ -68,7 +68,7 @@ namespace endabgabe {
             child1.state = "down"
             child1.x = 600;
             child1.y = Math.random() * 400 + 400;
-            child1.dx = Math.random() * 3 - 5;
+            child1.dx = Math.random() * 3 - 4;
             child1.dy = - child1.dx;
             children1.push(child1);
         }
@@ -105,7 +105,7 @@ namespace endabgabe {
 
 
         for (let i: number = 0; i < 300; i++) {
-            let flake: Scenery = snowflakes[i];
+            let flake: Scenery = snow2[i];
             flake.move();
             flake.draw();
         }
@@ -159,16 +159,7 @@ namespace endabgabe {
         }
     }
 
-    function draw() {
 
-        hillSide();
-        drawSky();
-        drawSun();
-        drawCloud1();
-        drawCloud2();
-        drawCloud3();
-        drawCloud4();
-    }
 
     function drawSun() {
 

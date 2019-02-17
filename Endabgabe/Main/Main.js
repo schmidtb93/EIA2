@@ -7,7 +7,7 @@ var endabgabe;
         document.getElementById("Highscores").addEventListener("click", lowScores);
     }
     let fps = 25;
-    let snowflakes = [];
+    let snow2 = [];
     let children1 = [];
     let trees = [];
     let snowballs = [];
@@ -47,14 +47,14 @@ var endabgabe;
             snow1.x = Math.random() * endabgabe.crc2.canvas.width;
             snow1.y = Math.random() * endabgabe.crc2.canvas.height;
             snow1.dy = Math.random() * 4;
-            snowflakes.push(snow1);
+            snow2.push(snow1);
         }
         for (let i = 0; i < 7; i++) {
             let child1 = new endabgabe.ChildCarriage();
             child1.state = "down";
             child1.x = 600;
             child1.y = Math.random() * 400 + 400;
-            child1.dx = Math.random() * 3 - 5;
+            child1.dx = Math.random() * 3 - 4;
             child1.dy = -child1.dx;
             children1.push(child1);
         }
@@ -84,7 +84,7 @@ var endabgabe;
         endabgabe.crc2.putImageData(imgData, 0, 0);
         document.getElementById("score").innerHTML = "Maluspunkte:" + score.toString() + "";
         for (let i = 0; i < 300; i++) {
-            let flake = snowflakes[i];
+            let flake = snow2[i];
             flake.move();
             flake.draw();
         }
@@ -127,15 +127,6 @@ var endabgabe;
         if (snowballs.length > 30) {
             endscreen();
         }
-    }
-    function draw() {
-        hillSide();
-        drawSky();
-        drawSun();
-        drawCloud1();
-        drawCloud2();
-        drawCloud3();
-        drawCloud4();
     }
     function drawSun() {
         endabgabe.crc2.beginPath();
